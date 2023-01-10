@@ -21,8 +21,6 @@ public class LiftGenerator : MonoBehaviour
     public float gravity = 50;
     public float liftYaw = 5f;
 
-    public string key1;
-
     public AnimationCurve lift;
     float liftCoefficient;
     public AnimationCurve drag;

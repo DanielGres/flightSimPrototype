@@ -1004,9 +1004,8 @@ MonoBehaviour:
   controlsdown: q
   liftMul: 20
   dragMul: 3
-  gravity: 60
+  gravity: 10
   liftYaw: 2
-  key1: x
   lift:
     serializedVersion: 2
     m_Curve:
@@ -1464,11 +1463,10 @@ MonoBehaviour:
   pitchControlMax: 5
   controlsup: a
   controlsdown: d
-  liftMul: 20
+  liftMul: 15
   dragMul: 3
   gravity: 60
   liftYaw: 2
-  key1: x
   lift:
     serializedVersion: 2
     m_Curve:
@@ -2174,16 +2172,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thrustForce: 25
   max_thrust_force: 75
-  thrustCoef: 1
+  thrustCoef: 0
   pitchControl: 0
   pitchControlMax: 10
   controlsup: w
   controlsdown: s
   liftMul: 20
   dragMul: 3
-  gravity: 60
+  gravity: 20
   liftYaw: 2
-  key1: x
   lift:
     serializedVersion: 2
     m_Curve:
@@ -2624,11 +2621,10 @@ MonoBehaviour:
   pitchControlMax: 5
   controlsup: d
   controlsdown: a
-  liftMul: 20
+  liftMul: 15
   dragMul: 3
   gravity: 60
   liftYaw: 2
-  key1: x
   lift:
     serializedVersion: 2
     m_Curve:
