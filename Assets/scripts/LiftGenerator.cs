@@ -6,10 +6,6 @@ using TMPro;
 
 public class LiftGenerator : MonoBehaviour
 {
-    public float thrustForce = 1f;
-    public float max_thrust_force = 150;
-    public float thrustCoef = 1;
-
     public float pitchControl = 0;
     public float pitchControlMax = 50;
 
@@ -61,18 +57,6 @@ public class LiftGenerator : MonoBehaviour
         Vector3 LocalGForce = invRotation * acceleration;
         lastVelocity = Velocity;
 
-        if (Input.GetKey(KeyCode.LeftShift)) {
-
-            thrustForce += 1f;
-        }
-        if (Input.GetKey(KeyCode.LeftControl))
-        {
-
-            thrustForce -= 1f;
-        }
-
-        thrustForce = Mathf.Clamp(thrustForce, 0, max_thrust_force);
-
         if (Input.GetKey(controlsup)){ pitchControl += 0.1f; }
         if (Input.GetKey(controlsdown)){ pitchControl -= 0.1f; }
         
@@ -99,7 +83,6 @@ public class LiftGenerator : MonoBehaviour
         wing.AddForce(Vector3.down * gravity * Time.deltaTime);
         wing.AddForce(transform.right * +yawForce * Time.deltaTime);
         wing.AddRelativeForce(LocalVelocity.normalized * -dragForce * Time.deltaTime);
-        wing.AddForce(transform.forward * thrustForce * thrustCoef * Time.deltaTime);
 
         DrawArrow.ForDebug(transform.position,transform.up, Color.green, liftForce/10);
         DrawArrow.ForDebug(transform.position,-wing.velocity, Color.red, dragForce /10);
@@ -118,7 +101,6 @@ public class LiftGenerator : MonoBehaviour
         yawAngleMeter.SetText("Yaw Angle: " + angleYaw.ToString());
         speedoMeter.SetText("velocity: " + speed.ToString());
         heightMeter.SetText("height: " + height.ToString());
-        ThrustMeter.SetText("thrust: " + thrustForce.ToString());
 
         Color color;
 
