@@ -8,6 +8,8 @@ public class thrustforce : MonoBehaviour
 {
     Rigidbody propeler;
 
+    public float gravity = 50;
+
     public float thrustForce = 1f;
     public float max_thrust_force = 150;
     public float thrustCoef = 1;

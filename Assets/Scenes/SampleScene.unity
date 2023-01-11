@@ -975,9 +975,9 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 801101794}
   serializedVersion: 2
-  m_Mass: 0.1
+  m_Mass: 0.3
   m_Drag: 0
-  m_AngularDrag: 0.1
+  m_AngularDrag: 5
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -995,9 +995,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a53362ccfb214284ead8933f9d41d36b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thrustForce: 25
-  max_thrust_force: 75
-  thrustCoef: 0
   pitchControl: 0
   pitchControlMax: 10
   controlsup: e
@@ -1005,7 +1002,7 @@ MonoBehaviour:
   liftMul: 20
   dragMul: 3
   gravity: 10
-  liftYaw: 2
+  liftYaw: 3
   lift:
     serializedVersion: 2
     m_Curve:
@@ -1158,7 +1155,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 0.9, y: 0.9, z: 0.9}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &801101798
 MeshRenderer:
@@ -1436,9 +1433,9 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1101937936}
   serializedVersion: 2
-  m_Mass: 0.1
+  m_Mass: 0.5
   m_Drag: 0
-  m_AngularDrag: 0.1
+  m_AngularDrag: 5
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -1456,9 +1453,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a53362ccfb214284ead8933f9d41d36b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thrustForce: 25
-  max_thrust_force: 75
-  thrustCoef: 0
   pitchControl: 0
   pitchControlMax: 5
   controlsup: a
@@ -1466,7 +1460,7 @@ MonoBehaviour:
   liftMul: 15
   dragMul: 3
   gravity: 60
-  liftYaw: 2
+  liftYaw: 3
   lift:
     serializedVersion: 2
     m_Curve:
@@ -1619,7 +1613,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 0.9, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1101937940
 MeshRenderer:
@@ -2150,9 +2144,9 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1512781614}
   serializedVersion: 2
-  m_Mass: 0.1
+  m_Mass: 0.4
   m_Drag: 0
-  m_AngularDrag: 0.1
+  m_AngularDrag: 5
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -2170,9 +2164,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a53362ccfb214284ead8933f9d41d36b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thrustForce: 25
-  max_thrust_force: 75
-  thrustCoef: 0
   pitchControl: 0
   pitchControlMax: 10
   controlsup: w
@@ -2180,7 +2171,7 @@ MonoBehaviour:
   liftMul: 20
   dragMul: 3
   gravity: 20
-  liftYaw: 2
+  liftYaw: 3
   lift:
     serializedVersion: 2
     m_Curve:
@@ -2333,7 +2324,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 0.9, y: 0.9, z: 0.9}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1512781618
 MeshRenderer:
@@ -2499,7 +2490,6 @@ GameObject:
   - component: {fileID: 1762819011}
   - component: {fileID: 1762819016}
   - component: {fileID: 1762819018}
-  - component: {fileID: 1762819017}
   m_Layer: 7
   m_Name: LiftingWingLeft
   m_TagString: Untagged
@@ -2515,9 +2505,9 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1762819010}
   serializedVersion: 2
-  m_Mass: 0.1
+  m_Mass: 0.5
   m_Drag: 0
-  m_AngularDrag: 0.1
+  m_AngularDrag: 5
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -2534,7 +2524,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 0.9, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1762819013
 MeshRenderer:
@@ -2614,9 +2604,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a53362ccfb214284ead8933f9d41d36b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thrustForce: 25
-  max_thrust_force: 75
-  thrustCoef: 0
   pitchControl: 0
   pitchControlMax: 5
   controlsup: d
@@ -2624,7 +2611,7 @@ MonoBehaviour:
   liftMul: 15
   dragMul: 3
   gravity: 60
-  liftYaw: 2
+  liftYaw: 3
   lift:
     serializedVersion: 2
     m_Curve:
@@ -2766,27 +2753,6 @@ MonoBehaviour:
   speedoMeter: {fileID: 84382489}
   heightMeter: {fileID: 1824065230}
   ThrustMeter: {fileID: 1222746942}
---- !u!114 &1762819017
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1762819010}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 19faf44c86edcea4a9f01e18a0b6a401, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pitchRotationSpeed: 1
-  rollRotationSpeed: 1
-  yawRotationSpeed: 1
-  key2: w
-  key3: s
-  key4: a
-  key5: d
-  key6: e
-  key7: q
 --- !u!114 &1762819018
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3087,11 +3053,11 @@ GameObject:
   - component: {fileID: 2051935945}
   - component: {fileID: 2051935944}
   - component: {fileID: 2051935943}
-  - component: {fileID: 2051935942}
-  - component: {fileID: 2051935941}
-  - component: {fileID: 2051935948}
-  - component: {fileID: 2051935949}
   - component: {fileID: 2051935950}
+  - component: {fileID: 2051935954}
+  - component: {fileID: 2051935953}
+  - component: {fileID: 2051935952}
+  - component: {fileID: 2051935951}
   m_Layer: 6
   m_Name: Fuselage
   m_TagString: Untagged
@@ -3099,36 +3065,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!138 &2051935941
-FixedJoint:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2051935940}
-  m_ConnectedBody: {fileID: 1512781615}
-  m_ConnectedArticulationBody: {fileID: 0}
-  m_BreakForce: Infinity
-  m_BreakTorque: Infinity
-  m_EnableCollision: 0
-  m_EnablePreprocessing: 1
-  m_MassScale: 1
-  m_ConnectedMassScale: 1
---- !u!138 &2051935942
-FixedJoint:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2051935940}
-  m_ConnectedBody: {fileID: 1762819011}
-  m_ConnectedArticulationBody: {fileID: 0}
-  m_BreakForce: Infinity
-  m_BreakTorque: Infinity
-  m_EnableCollision: 0
-  m_EnablePreprocessing: 1
-  m_MassScale: 1
-  m_ConnectedMassScale: 1
 --- !u!54 &2051935943
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3140,7 +3076,7 @@ Rigidbody:
   m_Mass: 0.1
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
@@ -3216,7 +3152,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2051935940}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.5, z: 0}
+  m_LocalPosition: {x: 0, y: 0.5, z: 3.5}
   m_LocalScale: {x: 0.3, y: 0.3, z: 4}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3228,22 +3164,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!138 &2051935948
-FixedJoint:
+--- !u!114 &2051935950
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2051935940}
-  m_ConnectedBody: {fileID: 1101937937}
-  m_ConnectedArticulationBody: {fileID: 0}
-  m_BreakForce: Infinity
-  m_BreakTorque: Infinity
-  m_EnableCollision: 0
-  m_EnablePreprocessing: 1
-  m_MassScale: 1
-  m_ConnectedMassScale: 1
---- !u!138 &2051935949
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb4e100f322d8074f868bf0cffbc6be1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gravity: 50
+  thrustForce: 25
+  max_thrust_force: 100
+  thrustCoef: 3
+  ThrustMeter: {fileID: 1222746942}
+--- !u!138 &2051935951
 FixedJoint:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3258,19 +3196,48 @@ FixedJoint:
   m_EnablePreprocessing: 1
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!114 &2051935950
-MonoBehaviour:
+--- !u!138 &2051935952
+FixedJoint:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2051935940}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cb4e100f322d8074f868bf0cffbc6be1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  thrustForce: 25
-  max_thrust_force: 100
-  thrustCoef: 3
-  ThrustMeter: {fileID: 1222746942}
+  m_ConnectedBody: {fileID: 1512781615}
+  m_ConnectedArticulationBody: {fileID: 0}
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_EnableCollision: 0
+  m_EnablePreprocessing: 1
+  m_MassScale: 1
+  m_ConnectedMassScale: 1
+--- !u!138 &2051935953
+FixedJoint:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2051935940}
+  m_ConnectedBody: {fileID: 1101937937}
+  m_ConnectedArticulationBody: {fileID: 0}
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_EnableCollision: 0
+  m_EnablePreprocessing: 1
+  m_MassScale: 1
+  m_ConnectedMassScale: 1
+--- !u!138 &2051935954
+FixedJoint:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2051935940}
+  m_ConnectedBody: {fileID: 1762819011}
+  m_ConnectedArticulationBody: {fileID: 0}
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_EnableCollision: 0
+  m_EnablePreprocessing: 1
+  m_MassScale: 1
+  m_ConnectedMassScale: 1
