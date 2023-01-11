@@ -37,5 +37,7 @@ public class thrustforce : MonoBehaviour
         thrustForce = Mathf.Clamp(thrustForce, 0, max_thrust_force);
         propeler.AddForce(transform.forward * thrustForce * thrustCoef * Time.deltaTime);
         ThrustMeter.SetText("thrust: " + thrustForce.ToString());
+
+        DrawArrow.ForDebug(transform.position, transform.forward, Color.magenta, thrustForce * thrustCoef / 50);
     }
 }

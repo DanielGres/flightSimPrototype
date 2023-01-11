@@ -1454,11 +1454,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pitchControl: 0
-  pitchControlMax: 5
+  pitchControlMax: 10
   controlsup: a
   controlsdown: d
   liftMul: 15
-  dragMul: 3
+  dragMul: 1.5
   gravity: 60
   liftYaw: 3
   lift:
@@ -1516,14 +1516,14 @@ MonoBehaviour:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: -50.881233
-      value: 0.9998064
-      inSlope: -0.049810443
-      outSlope: -0.049810443
+      time: -5
+      value: 2.5
+      inSlope: -0.5542596
+      outSlope: -0.5542596
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.24345006
-      outWeight: 0.039200302
+      outWeight: 0.10291132
     - serializedVersion: 3
       time: 0.0014730096
       value: 0.100233436
@@ -1534,13 +1534,13 @@ MonoBehaviour:
       inWeight: 0.33333334
       outWeight: 0.4094678
     - serializedVersion: 3
-      time: 50.125763
-      value: 1.0001101
-      inSlope: 0.048865184
-      outSlope: 0.048865184
+      time: 5
+      value: 2.5
+      inSlope: 0.70401764
+      outSlope: 0.70401764
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.049344044
+      inWeight: 0.08676854
       outWeight: 0.25291577
     m_PreInfinity: 2
     m_PostInfinity: 2
@@ -2227,14 +2227,14 @@ MonoBehaviour:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: -50.881233
-      value: 0.9998064
-      inSlope: -0.049810443
-      outSlope: -0.049810443
+      time: -5
+      value: 2.5
+      inSlope: -0.5542596
+      outSlope: -0.5542596
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.24345006
-      outWeight: 0.039200302
+      outWeight: 0.10291132
     - serializedVersion: 3
       time: 0.0014730096
       value: 0.100233436
@@ -2245,13 +2245,13 @@ MonoBehaviour:
       inWeight: 0.33333334
       outWeight: 0.4094678
     - serializedVersion: 3
-      time: 50.125763
-      value: 1.0001101
-      inSlope: 0.048865184
-      outSlope: 0.048865184
+      time: 5
+      value: 2.5
+      inSlope: 0.70401764
+      outSlope: 0.70401764
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.049344044
+      inWeight: 0.08676854
       outWeight: 0.25291577
     m_PreInfinity: 2
     m_PostInfinity: 2
@@ -2605,11 +2605,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pitchControl: 0
-  pitchControlMax: 5
+  pitchControlMax: 10
   controlsup: d
   controlsdown: a
   liftMul: 15
-  dragMul: 3
+  dragMul: 1.5
   gravity: 60
   liftYaw: 3
   lift:
@@ -2667,14 +2667,14 @@ MonoBehaviour:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: -50.881233
-      value: 0.9998064
-      inSlope: -0.049810443
-      outSlope: -0.049810443
+      time: -5
+      value: 2.5
+      inSlope: -0.5542596
+      outSlope: -0.5542596
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.24345006
-      outWeight: 0.039200302
+      outWeight: 0.10291132
     - serializedVersion: 3
       time: 0.0014730096
       value: 0.100233436
@@ -2685,13 +2685,13 @@ MonoBehaviour:
       inWeight: 0.33333334
       outWeight: 0.4094678
     - serializedVersion: 3
-      time: 50.125763
-      value: 1.0001101
-      inSlope: 0.048865184
-      outSlope: 0.048865184
+      time: 5
+      value: 2.5
+      inSlope: 0.70401764
+      outSlope: 0.70401764
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.049344044
+      inWeight: 0.08676854
       outWeight: 0.25291577
     m_PreInfinity: 2
     m_PostInfinity: 2
