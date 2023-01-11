@@ -84,12 +84,12 @@ public class LiftGenerator : MonoBehaviour
         wing.AddForce(transform.right * +yawForce * Time.deltaTime);
         wing.AddRelativeForce(LocalVelocity.normalized * -dragForce * Time.deltaTime);
 
-        DrawArrow.ForDebug(transform.position,transform.up, Color.green, liftForce/10);
-        DrawArrow.ForDebug(transform.position,-wing.velocity, Color.red, dragForce /10);
-        DrawArrow.ForDebug(transform.position,wing.velocity, Color.blue, speed/10);
-        DrawArrow.ForDebug(transform.position,transform.forward, Color.magenta, speed / 10);
-        DrawArrow.ForDebug(transform.position,Vector3.down, Color.black, gravity/10);
-        DrawArrow.ForDebug(transform.position, transform.right, Color.cyan, yawForce/10);
+        DrawArrow.ForDebug(transform.position,transform.up, Color.green, liftForce/20);
+        DrawArrow.ForDebug(transform.position,-wing.velocity, Color.red, dragForce /20);
+        DrawArrow.ForDebug(transform.position,wing.velocity, Color.blue, speed/20);
+        DrawArrow.ForDebug(transform.position,transform.forward, Color.magenta, speed / 20);
+        DrawArrow.ForDebug(transform.position,Vector3.down, Color.black, gravity/20);
+        DrawArrow.ForDebug(transform.position, transform.right, Color.cyan, yawForce/20);
 
         /*
         DrawArrow.ForDebug(transform.position,transform.up, Color.green, 5f);
