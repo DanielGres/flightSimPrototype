@@ -33,6 +33,8 @@ public class LiftGenerator : MonoBehaviour
     public TextMeshProUGUI heightMeter;
     public TextMeshProUGUI ThrustMeter;
 
+    public bool isRealistic = true;
+
     Rigidbody wing;
     void Start()
     {
@@ -42,7 +44,6 @@ public class LiftGenerator : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-
         if (Input.GetKey(controlsup)){ pitchControl += 1f; }
         if (Input.GetKey(controlsdown)){ pitchControl -= 1f; }
         pitchControl = Mathf.Clamp(pitchControl, -pitchControlMax / 2, pitchControlMax / 2);
@@ -64,10 +65,19 @@ public class LiftGenerator : MonoBehaviour
 
         pitchControl = pitchControl * 0.95f;
 
+        if (isRealistic)
+        {
+            liftCoefficient = lift.Evaluate(angle+pitchControl);
+            dragCoefficient = drag.Evaluate(angle);
+            yawCoefficient = yawLift.Evaluate(angleYaw);
+        }
+        else 
+        {
+            liftCoefficient = lift.Evaluate(pitchControl);
+            dragCoefficient = 0f;
+            yawCoefficient = 0f;
+        }
 
-        liftCoefficient = lift.Evaluate(angle+pitchControl);
-        dragCoefficient = drag.Evaluate(angle);
-        yawCoefficient = yawLift.Evaluate(angleYaw);
 
         float liftForce = 0.5f * speed * speed * liftCoefficient * liftMul;
         float dragForce = 0.5f * speed * speed * dragCoefficient * dragMul;
