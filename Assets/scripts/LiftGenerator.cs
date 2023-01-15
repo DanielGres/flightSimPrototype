@@ -42,6 +42,11 @@ public class LiftGenerator : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+
+        if (Input.GetKey(controlsup)){ pitchControl += 1f; }
+        if (Input.GetKey(controlsdown)){ pitchControl -= 1f; }
+        pitchControl = Mathf.Clamp(pitchControl, -pitchControlMax / 2, pitchControlMax / 2);
+        
         speed = wing.velocity.magnitude;
 
         var invRotation = Quaternion.Inverse(wing.rotation);
@@ -57,15 +62,10 @@ public class LiftGenerator : MonoBehaviour
         Vector3 LocalGForce = invRotation * acceleration;
         lastVelocity = Velocity;
 
-        if (Input.GetKey(controlsup)){ pitchControl += 0.1f; }
-        if (Input.GetKey(controlsdown)){ pitchControl -= 0.1f; }
-        
-        pitchControl = Mathf.Clamp(pitchControl,-pitchControlMax/ 2,pitchControlMax/ 2);
-        angle = angle + pitchControl;
+        pitchControl = pitchControl * 0.95f;
 
-        pitchControl = pitchControl * 0.99f;
 
-        liftCoefficient = lift.Evaluate(angle);
+        liftCoefficient = lift.Evaluate(angle+pitchControl);
         dragCoefficient = drag.Evaluate(angle);
         yawCoefficient = yawLift.Evaluate(angleYaw);
 
@@ -122,5 +122,14 @@ public class LiftGenerator : MonoBehaviour
         speedoMeter.color = color;
         heightMeter.color = color;
 
+
+    }
+    public void rotateRigidBodyAroundPointBy(Rigidbody rb, Vector3 origin, Vector3 axis, float angle)
+    {
+        Quaternion q = Quaternion.AngleAxis(angle, axis);
+        rb.MovePosition(q * (rb.transform.position - origin) + origin);
+        rb.MoveRotation(rb.transform.rotation * q);
     }
 }
+
+
