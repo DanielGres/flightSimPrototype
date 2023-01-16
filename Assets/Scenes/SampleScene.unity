@@ -334,6 +334,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_SendPointerHoverToParent: 1
   m_HorizontalAxis: Horizontal
   m_VerticalAxis: Vertical
   m_SubmitButton: Submit
@@ -1175,11 +1176,11 @@ Terrain:
   m_Enabled: 1
   serializedVersion: 6
   m_TerrainData: {fileID: 15600000, guid: 48af8ec331f224040a77a6b96816ced8, type: 2}
-  m_TreeDistance: 5000
-  m_TreeBillboardDistance: 50
-  m_TreeCrossFadeLength: 5
-  m_TreeMaximumFullLODCount: 50
-  m_DetailObjectDistance: 80
+  m_TreeDistance: 620
+  m_TreeBillboardDistance: 975
+  m_TreeCrossFadeLength: 82
+  m_TreeMaximumFullLODCount: 0
+  m_DetailObjectDistance: 0
   m_DetailObjectDensity: 1
   m_HeightmapPixelError: 5
   m_SplatMapDistance: 1000
@@ -3894,7 +3895,7 @@ MonoBehaviour:
   gravity: 200
   thrustForce: 0
   max_thrust_force: 100
-  thrustCoef: 1
+  thrustCoef: 1.5
   ThrustMeter: {fileID: 1222746942}
 --- !u!138 &2051935951
 FixedJoint:
