@@ -8,6 +8,8 @@ public class LiftGenerator : MonoBehaviour
 {
     public float pitchControl = 0;
     public float pitchControlMax = 50;
+    public float trimControl = 0;
+    public float trimControlMax = 10;
 
     public string controlsup;
     public string controlsdown;
@@ -44,10 +46,31 @@ public class LiftGenerator : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (Input.GetKey(controlsup)){ pitchControl += 1f; }
-        if (Input.GetKey(controlsdown)){ pitchControl -= 1f; }
+        if (Input.GetKey(controlsup)){ 
+            if (Input.GetKey("t"))
+            {
+                trimControl += 0.05f;
+            }
+            else
+            {
+                pitchControl += 1f;
+
+            }
+        }
+        if (Input.GetKey(controlsdown)){ 
+            if (Input.GetKey("t"))
+            {
+                trimControl -= 0.05f;
+            }
+            else
+            {
+                pitchControl -= 1f;
+
+            }
+        }
         pitchControl = Mathf.Clamp(pitchControl, -pitchControlMax / 2, pitchControlMax / 2);
-        
+        trimControl = Mathf.Clamp(trimControl, -trimControlMax / 2, trimControlMax / 2);
+
         speed = wing.velocity.magnitude;
 
         var invRotation = Quaternion.Inverse(wing.rotation);
@@ -67,7 +90,7 @@ public class LiftGenerator : MonoBehaviour
 
         if (isRealistic)
         {
-            liftCoefficient = lift.Evaluate(angle+pitchControl);
+            liftCoefficient = lift.Evaluate(angle+pitchControl+trimControl);
             dragCoefficient = drag.Evaluate(angle);
             yawCoefficient = yawLift.Evaluate(angleYaw);
         }
@@ -114,17 +137,17 @@ public class LiftGenerator : MonoBehaviour
 
         Color color;
 
-        if (Mathf.Abs(angle) > 15)
+        if (Mathf.Abs(angle) > 12)
         {
             color = Color.red;
         }
-        else if (Mathf.Abs(angle) > 1)
+        else if (Mathf.Abs(angle) > 5)
         {
             color = Color.yellow;
         }
         else
         {
-            color = Color.white;
+            color = Color.green;
         }
 
         AOAMeter.color = color;

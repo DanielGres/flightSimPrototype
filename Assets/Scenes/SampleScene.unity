@@ -652,6 +652,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pitchControl: 0
   pitchControlMax: 20
+  trimControl: 0
+  trimControlMax: 10
   controlsup: e
   controlsdown: q
   liftMul: 5
@@ -1176,12 +1178,12 @@ Terrain:
   m_Enabled: 1
   serializedVersion: 6
   m_TerrainData: {fileID: 15600000, guid: 48af8ec331f224040a77a6b96816ced8, type: 2}
-  m_TreeDistance: 620
-  m_TreeBillboardDistance: 975
-  m_TreeCrossFadeLength: 82
-  m_TreeMaximumFullLODCount: 0
-  m_DetailObjectDistance: 0
-  m_DetailObjectDensity: 1
+  m_TreeDistance: 840
+  m_TreeBillboardDistance: 104
+  m_TreeCrossFadeLength: 200
+  m_TreeMaximumFullLODCount: 1
+  m_DetailObjectDistance: 20
+  m_DetailObjectDensity: 0.109
   m_HeightmapPixelError: 5
   m_SplatMapDistance: 1000
   m_HeightmapMaximumLOD: 0
@@ -1384,6 +1386,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pitchControl: 0
   pitchControlMax: 0
+  trimControl: 0
+  trimControlMax: 10
   controlsup: o
   controlsdown: o
   liftMul: 30
@@ -1932,6 +1936,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pitchControl: 0
   pitchControlMax: 20
+  trimControl: 0
+  trimControlMax: 10
   controlsup: d
   controlsdown: a
   liftMul: 20
@@ -2307,6 +2313,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pitchControl: 0
   pitchControlMax: 20
+  trimControl: 0
+  trimControlMax: 10
   controlsup: a
   controlsdown: d
   liftMul: 20
@@ -2584,6 +2592,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pitchControl: 0
   pitchControlMax: 10
+  trimControl: 0
+  trimControlMax: 10
   controlsup: w
   controlsdown: s
   liftMul: 25
@@ -3028,6 +3038,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pitchControl: 0
   pitchControlMax: 0
+  trimControl: 0
+  trimControlMax: 10
   controlsup: o
   controlsdown: o
   liftMul: 30
@@ -3789,7 +3801,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2051935940}
   serializedVersion: 2
-  m_Mass: 0.5
+  m_Mass: 2
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 0
@@ -3892,10 +3904,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb4e100f322d8074f868bf0cffbc6be1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gravity: 200
+  gravity: 750
   thrustForce: 0
-  max_thrust_force: 100
-  thrustCoef: 1.5
+  max_thrust_force: 50
+  thrustCoef: 5
   ThrustMeter: {fileID: 1222746942}
 --- !u!138 &2051935951
 FixedJoint:
