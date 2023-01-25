@@ -22,7 +22,6 @@ public class healthBar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        healthPoints = Mathf.PingPong(Time.time*2,maxHLTH);
         if (healthPoints > maxHLTH*2 / 3)
         {
             cubeRenderer.material.SetColor("_Color", Color.Lerp(colorFucking, colorFine, (healthPoints-2*(maxHLTH/3))/(maxHLTH/3)));
@@ -34,6 +33,18 @@ public class healthBar : MonoBehaviour
         else
         {
             cubeRenderer.material.SetColor("_Color", Color.Lerp(colorFucked, colorFuucking, healthPoints / (maxHLTH / 3)));
+        }
+        if (healthPoints <= 0)
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "bullet")
+        {
+            healthPoints -= 5f;
         }
     }
 }

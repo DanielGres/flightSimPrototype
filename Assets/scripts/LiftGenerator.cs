@@ -35,7 +35,7 @@ public class LiftGenerator : MonoBehaviour
     public TextMeshProUGUI heightMeter;
     public TextMeshProUGUI ThrustMeter;
 
-    public bool isRealistic = true;
+    public bool isFlap = true;
 
     Rigidbody wing;
     void Start()
@@ -68,8 +68,6 @@ public class LiftGenerator : MonoBehaviour
 
             }
         }
-        pitchControl = Mathf.Clamp(pitchControl, -pitchControlMax / 2, pitchControlMax / 2);
-        trimControl = Mathf.Clamp(trimControl, -trimControlMax / 2, trimControlMax / 2);
 
         speed = wing.velocity.magnitude;
 
@@ -86,21 +84,30 @@ public class LiftGenerator : MonoBehaviour
         Vector3 LocalGForce = invRotation * acceleration;
         lastVelocity = Velocity;
 
-        pitchControl = pitchControl * 0.95f;
 
-        if (isRealistic)
+        if (isFlap)
         {
+            pitchControl = Mathf.Clamp(pitchControl, 0, pitchControlMax);
+            if (pitchControl >= 1)
+            {
+                liftCoefficient = lift.Evaluate(angle + pitchControlMax);
+                dragCoefficient = drag.Evaluate(angle + pitchControlMax);
+            }
+            else
+            {
+                liftCoefficient = lift.Evaluate(angle);
+                dragCoefficient = drag.Evaluate(angle);
+            }
+        }
+        else
+        {
+            pitchControl = Mathf.Clamp(pitchControl, -pitchControlMax / 2, pitchControlMax / 2);
+            trimControl = Mathf.Clamp(trimControl, -trimControlMax / 2, trimControlMax / 2);
+            pitchControl = pitchControl * 0.95f;
             liftCoefficient = lift.Evaluate(angle+pitchControl+trimControl);
-            dragCoefficient = drag.Evaluate(angle);
-            yawCoefficient = yawLift.Evaluate(angleYaw);
+            dragCoefficient = drag.Evaluate(angle+pitchControl);
         }
-        else 
-        {
-            liftCoefficient = lift.Evaluate(pitchControl);
-            dragCoefficient = 0f;
-            yawCoefficient = 0f;
-        }
-
+        yawCoefficient = yawLift.Evaluate(angleYaw);
 
         float liftForce = 0.5f * speed * speed * liftCoefficient * liftMul;
         float dragForce = 0.5f * speed * speed * dragCoefficient * dragMul;
@@ -110,11 +117,9 @@ public class LiftGenerator : MonoBehaviour
         //Debug.Log("x: "+ LocalVelocity.x + " y: "+ LocalVelocity.y + " z: "+ LocalVelocity.z);
         //Debug.Log(yawForce);
 
-        wing.MoveRotation(wing.rotation * Quaternion.Euler(new Vector3(0, -yawForce, 0) * Time.deltaTime));
-
         wing.AddForce(transform.up * liftForce * Time.deltaTime);
         wing.AddForce(Vector3.down * gravity * Time.deltaTime);
-        wing.AddForce(transform.right * +yawForce * Time.deltaTime);
+        wing.AddForce(transform.right * yawForce * Time.deltaTime);
         wing.AddRelativeForce(LocalVelocity.normalized * -dragForce * Time.deltaTime);
 
         DrawArrow.ForDebug(transform.position,transform.up, Color.green, liftForce/20);
