@@ -6,6 +6,8 @@ using TMPro;
 
 public class LiftGenerator : MonoBehaviour
 {
+    public GameObject fuselage;
+
     public float pitchControl = 0;
     public float pitchControlMax = 50;
     public float trimControl = 0;
@@ -70,8 +72,9 @@ public class LiftGenerator : MonoBehaviour
         }
 
         speed = wing.velocity.magnitude;
+        
 
-        var invRotation = Quaternion.Inverse(wing.rotation);
+        var invRotation = Quaternion.Inverse(transform.rotation);
         Vector3 Velocity = wing.velocity;
         Vector3 LocalVelocity = invRotation * Velocity;
 

@@ -112,7 +112,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeDeath: 5
-  force: 10000
+  force: 7500
 --- !u!54 &2961510613476381065
 Rigidbody:
   m_ObjectHideFlags: 0
