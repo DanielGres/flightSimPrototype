@@ -124,7 +124,7 @@ public class LiftGenerator : MonoBehaviour
         aircraft.forceWings(transform.up * liftForce * Time.deltaTime,transform.position);
         aircraft.forceWings(Vector3.down * gravity * Time.deltaTime, transform.position);
         aircraft.forceWings(transform.right * yawForce * Time.deltaTime, transform.position);
-        //aircraft.forceWings(LocalVelocity.normalized * -dragForce * Time.deltaTime, transform.position);
+        aircraft.forceWings(transform.forward * -dragForce * Time.deltaTime, transform.position);
 
         /*        wing.AddForce(transform.up * liftForce * Time.deltaTime);
                 wing.AddForce(Vector3.down * gravity * Time.deltaTime);
