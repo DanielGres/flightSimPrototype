@@ -315,7 +315,6 @@ GameObject:
   - component: {fileID: 144028615}
   - component: {fileID: 144028614}
   - component: {fileID: 144028613}
-  - component: {fileID: 144028611}
   - component: {fileID: 144028612}
   m_Layer: 6
   m_Name: rightWheel
@@ -324,22 +323,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!54 &144028611
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 144028610}
-  serializedVersion: 2
-  m_Mass: 0.1
-  m_Drag: 0
-  m_AngularDrag: 5
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 2
 --- !u!146 &144028612
 WheelCollider:
   m_ObjectHideFlags: 0
@@ -428,11 +411,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 144028610}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.5, y: 0.4681536, z: -1.8856392}
-  m_LocalScale: {x: 0.22500001, y: 0.675, z: 0.22500007}
+  m_LocalPosition: {x: 1.6666666, y: -1.2780002, z: 0.16275}
+  m_LocalScale: {x: 0.75, y: 2.25, z: 0.056250017}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1947592577}
+  m_Father: {fileID: 2051935947}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &303115319
@@ -447,10 +430,7 @@ GameObject:
   - component: {fileID: 303115328}
   - component: {fileID: 303115327}
   - component: {fileID: 303115326}
-  - component: {fileID: 303115325}
   - component: {fileID: 303115324}
-  - component: {fileID: 303115323}
-  - component: {fileID: 303115322}
   - component: {fileID: 303115321}
   m_Layer: 7
   m_Name: LiftingWingRight
@@ -467,12 +447,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 303115319}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.4, y: 0.85155356, z: -2.1606393}
-  m_LocalScale: {x: 4.5, y: 0.089999996, z: 0.9}
+  m_LocalPosition: {x: 8, y: 0, z: 0.09399998}
+  m_LocalScale: {x: 15, y: 0.29999998, z: 0.225}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 993641299}
-  m_Father: {fileID: 1947592577}
+  m_Children: []
+  m_Father: {fileID: 2051935947}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &303115321
@@ -492,36 +471,6 @@ MonoBehaviour:
   colorFucking: {r: 1, g: 0.7877302, b: 0, a: 0}
   colorFuucking: {r: 1, g: 0, b: 0.08871317, a: 0}
   colorFucked: {r: 0, g: 0, b: 0, a: 0}
---- !u!138 &303115322
-FixedJoint:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 303115319}
-  m_ConnectedBody: {fileID: 144028611}
-  m_ConnectedArticulationBody: {fileID: 0}
-  m_BreakForce: Infinity
-  m_BreakTorque: Infinity
-  m_EnableCollision: 0
-  m_EnablePreprocessing: 1
-  m_MassScale: 1
-  m_ConnectedMassScale: 1
---- !u!138 &303115323
-FixedJoint:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 303115319}
-  m_ConnectedBody: {fileID: 993641301}
-  m_ConnectedArticulationBody: {fileID: 0}
-  m_BreakForce: Infinity
-  m_BreakTorque: Infinity
-  m_EnableCollision: 0
-  m_EnablePreprocessing: 1
-  m_MassScale: 1
-  m_ConnectedMassScale: 1
 --- !u!114 &303115324
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -687,22 +636,6 @@ MonoBehaviour:
   heightMeter: {fileID: 1824065230}
   ThrustMeter: {fileID: 1222746942}
   isFlap: 0
---- !u!54 &303115325
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 303115319}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 5
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!65 &303115326
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -792,12 +725,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 318911722}
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -2.266667, y: 0, z: 0}
-  m_LocalScale: {x: 3.333333, y: 3.3333333, z: 0.06666665}
+  m_LocalPosition: {x: -42, y: 0, z: 0.09399998}
+  m_LocalScale: {x: 0.74999994, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2090866097}
-  m_RootOrder: 1
+  m_Father: {fileID: 2051935947}
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!81 &318911724
 AudioListener:
@@ -1543,7 +1476,6 @@ GameObject:
   - component: {fileID: 801101799}
   - component: {fileID: 801101798}
   - component: {fileID: 801101797}
-  - component: {fileID: 801101795}
   - component: {fileID: 801101796}
   m_Layer: 7
   m_Name: LiftingWingYaw
@@ -1552,22 +1484,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!54 &801101795
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 801101794}
-  serializedVersion: 2
-  m_Mass: 0.3
-  m_Drag: 0
-  m_AngularDrag: 5
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!114 &801101796
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1804,12 +1720,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 801101794}
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 1.1515535, z: -4.736639}
-  m_LocalScale: {x: 0.9000003, y: 0.05000002, z: 0.4}
+  m_LocalPosition: {x: 0, y: 1, z: -0.54999995}
+  m_LocalScale: {x: 3, y: 0.16666673, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1947592577}
-  m_RootOrder: 7
+  m_Father: {fileID: 2051935947}
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!1 &884518283
 GameObject:
@@ -2213,7 +2129,6 @@ GameObject:
   - component: {fileID: 993641304}
   - component: {fileID: 993641303}
   - component: {fileID: 993641302}
-  - component: {fileID: 993641301}
   - component: {fileID: 993641300}
   m_Layer: 7
   m_Name: aileronRight
@@ -2230,12 +2145,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 993641298}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.3000001, y: 0, z: -0.8000001}
-  m_LocalScale: {x: 0.33333337, y: 0.33333334, z: 0.5555554}
+  m_LocalPosition: {x: 12.500002, y: 0, z: -0.086000025}
+  m_LocalScale: {x: 5, y: 0.099999994, z: 0.12499996}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 303115320}
-  m_RootOrder: 0
+  m_Father: {fileID: 2051935947}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &993641300
 MonoBehaviour:
@@ -2402,22 +2317,6 @@ MonoBehaviour:
   heightMeter: {fileID: 1824065230}
   ThrustMeter: {fileID: 1222746942}
   isFlap: 0
---- !u!54 &993641301
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 993641298}
-  serializedVersion: 2
-  m_Mass: 0.001
-  m_Drag: 0
-  m_AngularDrag: 1
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!65 &993641302
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2909,7 +2808,6 @@ GameObject:
   - component: {fileID: 1512781619}
   - component: {fileID: 1512781618}
   - component: {fileID: 1512781617}
-  - component: {fileID: 1512781615}
   - component: {fileID: 1512781616}
   m_Layer: 7
   m_Name: LiftingWingRear
@@ -2918,22 +2816,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!54 &1512781615
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1512781614}
-  serializedVersion: 2
-  m_Mass: 0.4
-  m_Drag: 0
-  m_AngularDrag: 5
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!114 &1512781616
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3170,12 +3052,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1512781614}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.0315536, z: -4.286639}
-  m_LocalScale: {x: 3, y: 0.050000004, z: 0.5}
+  m_LocalPosition: {x: 0, y: 0.5999998, z: -0.4375}
+  m_LocalScale: {x: 10, y: 0.16666667, z: 0.125}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1947592577}
-  m_RootOrder: 6
+  m_Father: {fileID: 2051935947}
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1601656379
 GameObject:
@@ -3189,7 +3071,6 @@ GameObject:
   - component: {fileID: 1601656385}
   - component: {fileID: 1601656384}
   - component: {fileID: 1601656383}
-  - component: {fileID: 1601656382}
   - component: {fileID: 1601656381}
   m_Layer: 7
   m_Name: aileronLeft
@@ -3206,12 +3087,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1601656379}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.3000001, y: 0, z: -0.8000001}
-  m_LocalScale: {x: 0.33333337, y: 0.33333334, z: 0.5555554}
+  m_LocalPosition: {x: -12.500002, y: 0, z: -0.086000025}
+  m_LocalScale: {x: 5, y: 0.099999994, z: 0.12499996}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2090866097}
-  m_RootOrder: 0
+  m_Father: {fileID: 2051935947}
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1601656381
 MonoBehaviour:
@@ -3378,22 +3259,6 @@ MonoBehaviour:
   heightMeter: {fileID: 1824065230}
   ThrustMeter: {fileID: 1222746942}
   isFlap: 0
---- !u!54 &1601656382
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1601656379}
-  serializedVersion: 2
-  m_Mass: 0.001
-  m_Drag: 0
-  m_AngularDrag: 1
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!65 &1601656383
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3917,7 +3782,6 @@ GameObject:
   - component: {fileID: 1889409263}
   - component: {fileID: 1889409266}
   - component: {fileID: 1889409265}
-  - component: {fileID: 1889409267}
   - component: {fileID: 1889409268}
   m_Layer: 6
   m_Name: rearWheel
@@ -3934,11 +3798,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1889409262}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.5515536, z: -4.3366394}
-  m_LocalScale: {x: 0.22500002, y: 0.3, z: 0.22500007}
+  m_LocalPosition: {x: 0, y: -1, z: -0.45000005}
+  m_LocalScale: {x: 0.75000006, y: 1, z: 0.056250017}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1947592577}
+  m_Father: {fileID: 2051935947}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &1889409265
@@ -3991,22 +3855,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1889409262}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!54 &1889409267
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1889409262}
-  serializedVersion: 2
-  m_Mass: 0.1
-  m_Drag: 0
-  m_AngularDrag: 5
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 2
 --- !u!146 &1889409268
 WheelCollider:
   m_ObjectHideFlags: 0
@@ -4048,7 +3896,6 @@ GameObject:
   - component: {fileID: 1894653850}
   - component: {fileID: 1894653853}
   - component: {fileID: 1894653852}
-  - component: {fileID: 1894653854}
   - component: {fileID: 1894653855}
   m_Layer: 6
   m_Name: leftWheel
@@ -4065,11 +3912,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1894653849}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.5, y: 0.4681536, z: -1.8856392}
-  m_LocalScale: {x: 0.22500001, y: 0.675, z: 0.22500007}
+  m_LocalPosition: {x: -1.6666666, y: -1.2780002, z: 0.16275}
+  m_LocalScale: {x: 0.75, y: 2.25, z: 0.056250017}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1947592577}
+  m_Father: {fileID: 2051935947}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &1894653852
@@ -4122,22 +3969,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1894653849}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!54 &1894653854
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1894653849}
-  serializedVersion: 2
-  m_Mass: 0.1
-  m_Drag: 0
-  m_AngularDrag: 5
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 2
 --- !u!146 &1894653855
 WheelCollider:
   m_ObjectHideFlags: 0
@@ -4332,13 +4163,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2051935947}
-  - {fileID: 1894653850}
-  - {fileID: 144028615}
-  - {fileID: 1889409263}
-  - {fileID: 303115320}
-  - {fileID: 2090866097}
-  - {fileID: 1512781620}
-  - {fileID: 801101800}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4357,11 +4181,6 @@ GameObject:
   - component: {fileID: 2051935943}
   - component: {fileID: 2051935950}
   - component: {fileID: 2051935956}
-  - component: {fileID: 2051935961}
-  - component: {fileID: 2051935960}
-  - component: {fileID: 2051935959}
-  - component: {fileID: 2051935963}
-  - component: {fileID: 2051935958}
   - component: {fileID: 2051935962}
   m_Layer: 6
   m_Name: Fuselage
@@ -4378,9 +4197,9 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2051935940}
   serializedVersion: 2
-  m_Mass: 2
+  m_Mass: 7
   m_Drag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 1
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -4462,6 +4281,16 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1700928685}
+  - {fileID: 1894653850}
+  - {fileID: 144028615}
+  - {fileID: 1889409263}
+  - {fileID: 303115320}
+  - {fileID: 993641299}
+  - {fileID: 2090866097}
+  - {fileID: 1601656380}
+  - {fileID: 318911723}
+  - {fileID: 1512781620}
+  - {fileID: 801101800}
   m_Father: {fileID: 1947592577}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4504,66 +4333,6 @@ MonoBehaviour:
   - {fileID: 318911722}
   - {fileID: 1410608922}
   - {fileID: 976509255}
---- !u!138 &2051935958
-FixedJoint:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2051935940}
-  m_ConnectedBody: {fileID: 303115325}
-  m_ConnectedArticulationBody: {fileID: 0}
-  m_BreakForce: Infinity
-  m_BreakTorque: Infinity
-  m_EnableCollision: 0
-  m_EnablePreprocessing: 1
-  m_MassScale: 1
-  m_ConnectedMassScale: 1
---- !u!138 &2051935959
-FixedJoint:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2051935940}
-  m_ConnectedBody: {fileID: 1512781615}
-  m_ConnectedArticulationBody: {fileID: 0}
-  m_BreakForce: Infinity
-  m_BreakTorque: Infinity
-  m_EnableCollision: 0
-  m_EnablePreprocessing: 1
-  m_MassScale: 1
-  m_ConnectedMassScale: 1
---- !u!138 &2051935960
-FixedJoint:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2051935940}
-  m_ConnectedBody: {fileID: 801101795}
-  m_ConnectedArticulationBody: {fileID: 0}
-  m_BreakForce: Infinity
-  m_BreakTorque: Infinity
-  m_EnableCollision: 0
-  m_EnablePreprocessing: 1
-  m_MassScale: 1
-  m_ConnectedMassScale: 1
---- !u!138 &2051935961
-FixedJoint:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2051935940}
-  m_ConnectedBody: {fileID: 1889409267}
-  m_ConnectedArticulationBody: {fileID: 0}
-  m_BreakForce: Infinity
-  m_BreakTorque: Infinity
-  m_EnableCollision: 0
-  m_EnablePreprocessing: 1
-  m_MassScale: 1
-  m_ConnectedMassScale: 1
 --- !u!114 &2051935962
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4578,21 +4347,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 7063217651382358460, guid: a9c9bff1a605d9746a4ce35c4482a0cd, type: 3}
   firerate: 0.1
---- !u!138 &2051935963
-FixedJoint:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2051935940}
-  m_ConnectedBody: {fileID: 2090866102}
-  m_ConnectedArticulationBody: {fileID: 0}
-  m_BreakForce: Infinity
-  m_BreakTorque: Infinity
-  m_EnableCollision: 0
-  m_EnablePreprocessing: 1
-  m_MassScale: 1
-  m_ConnectedMassScale: 1
 --- !u!1 &2090866096
 GameObject:
   m_ObjectHideFlags: 0
@@ -4605,10 +4359,7 @@ GameObject:
   - component: {fileID: 2090866105}
   - component: {fileID: 2090866104}
   - component: {fileID: 2090866103}
-  - component: {fileID: 2090866102}
   - component: {fileID: 2090866101}
-  - component: {fileID: 2090866100}
-  - component: {fileID: 2090866099}
   - component: {fileID: 2090866098}
   m_Layer: 7
   m_Name: LiftingWingLeft
@@ -4625,14 +4376,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2090866096}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.4, y: 0.85155356, z: -2.1606393}
-  m_LocalScale: {x: 4.5, y: 0.089999996, z: 0.9}
+  m_LocalPosition: {x: -8, y: 0, z: 0.09399998}
+  m_LocalScale: {x: 15, y: 0.29999998, z: 0.225}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1601656380}
-  - {fileID: 318911723}
-  m_Father: {fileID: 1947592577}
-  m_RootOrder: 5
+  m_Children: []
+  m_Father: {fileID: 2051935947}
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2090866098
 MonoBehaviour:
@@ -4651,36 +4400,6 @@ MonoBehaviour:
   colorFucking: {r: 1, g: 0.7877302, b: 0, a: 0}
   colorFuucking: {r: 1, g: 0, b: 0.08871317, a: 0}
   colorFucked: {r: 0, g: 0, b: 0, a: 0}
---- !u!138 &2090866099
-FixedJoint:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2090866096}
-  m_ConnectedBody: {fileID: 1894653854}
-  m_ConnectedArticulationBody: {fileID: 0}
-  m_BreakForce: Infinity
-  m_BreakTorque: Infinity
-  m_EnableCollision: 0
-  m_EnablePreprocessing: 1
-  m_MassScale: 1
-  m_ConnectedMassScale: 1
---- !u!138 &2090866100
-FixedJoint:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2090866096}
-  m_ConnectedBody: {fileID: 1601656382}
-  m_ConnectedArticulationBody: {fileID: 0}
-  m_BreakForce: Infinity
-  m_BreakTorque: Infinity
-  m_EnableCollision: 0
-  m_EnablePreprocessing: 1
-  m_MassScale: 1
-  m_ConnectedMassScale: 1
 --- !u!114 &2090866101
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4846,22 +4565,6 @@ MonoBehaviour:
   heightMeter: {fileID: 1824065230}
   ThrustMeter: {fileID: 1222746942}
   isFlap: 0
---- !u!54 &2090866102
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2090866096}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 5
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!65 &2090866103
 BoxCollider:
   m_ObjectHideFlags: 0
