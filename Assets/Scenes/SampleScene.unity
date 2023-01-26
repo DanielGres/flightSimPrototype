@@ -534,6 +534,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a53362ccfb214284ead8933f9d41d36b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fuselage: {fileID: 2051935940}
   pitchControl: 0
   pitchControlMax: 0
   trimControl: 0
@@ -1579,6 +1580,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a53362ccfb214284ead8933f9d41d36b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fuselage: {fileID: 2051935940}
   pitchControl: 0
   pitchControlMax: 20
   trimControl: 0
@@ -2247,6 +2249,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a53362ccfb214284ead8933f9d41d36b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fuselage: {fileID: 2051935940}
   pitchControl: 0
   pitchControlMax: 20
   trimControl: 0
@@ -2943,6 +2946,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a53362ccfb214284ead8933f9d41d36b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fuselage: {fileID: 2051935940}
   pitchControl: 0
   pitchControlMax: 10
   trimControl: 0
@@ -3221,6 +3225,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a53362ccfb214284ead8933f9d41d36b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fuselage: {fileID: 2051935940}
   pitchControl: 0
   pitchControlMax: 20
   trimControl: 0
@@ -4688,6 +4693,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a53362ccfb214284ead8933f9d41d36b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fuselage: {fileID: 2051935940}
   pitchControl: 0
   pitchControlMax: 0
   trimControl: 0

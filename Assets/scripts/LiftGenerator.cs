@@ -40,9 +40,13 @@ public class LiftGenerator : MonoBehaviour
     public bool isFlap = true;
 
     Rigidbody wing;
+    thrustforce aircraft;
+
+    Vector3 previous;
     void Start()
     {
-        wing = GetComponent<Rigidbody>();
+        //wing = GetComponent<Rigidbody>();
+        aircraft = fuselage.GetComponent<thrustforce>();
     }
 
     // Update is called once per frame
@@ -71,22 +75,19 @@ public class LiftGenerator : MonoBehaviour
             }
         }
 
-        speed = wing.velocity.magnitude;
-        
+        //speed = wing.velocity.magnitude;
+        speed = ((transform.position - previous) / Time.deltaTime).magnitude;
 
         var invRotation = Quaternion.Inverse(transform.rotation);
-        Vector3 Velocity = wing.velocity;
+        Vector3 Velocity = (transform.position - previous) / Time.deltaTime;
+        previous = transform.position;
+        //Vector3 Velocity = wing.velocity;
         Vector3 LocalVelocity = invRotation * Velocity;
 
         float height = transform.position.y;
 
         float angle = Mathf.Atan2(-LocalVelocity.y, LocalVelocity.z) * Mathf.Rad2Deg;
         float angleYaw = Mathf.Atan2(-LocalVelocity.x, LocalVelocity.z) * Mathf.Rad2Deg;
-
-        var acceleration = (Velocity - lastVelocity) / Time.deltaTime;
-        Vector3 LocalGForce = invRotation * acceleration;
-        lastVelocity = Velocity;
-
 
         if (isFlap)
         {
@@ -120,17 +121,22 @@ public class LiftGenerator : MonoBehaviour
         //Debug.Log("x: "+ LocalVelocity.x + " y: "+ LocalVelocity.y + " z: "+ LocalVelocity.z);
         //Debug.Log(yawForce);
 
-        wing.AddForce(transform.up * liftForce * Time.deltaTime);
-        wing.AddForce(Vector3.down * gravity * Time.deltaTime);
-        wing.AddForce(transform.right * yawForce * Time.deltaTime);
-        wing.AddRelativeForce(LocalVelocity.normalized * -dragForce * Time.deltaTime);
+        aircraft.forceWings(transform.up * liftForce * Time.deltaTime,transform.position);
+        aircraft.forceWings(Vector3.down * gravity * Time.deltaTime, transform.position);
+        aircraft.forceWings(transform.right * yawForce * Time.deltaTime, transform.position);
+        //aircraft.forceWings(LocalVelocity.normalized * -dragForce * Time.deltaTime, transform.position);
 
-        DrawArrow.ForDebug(transform.position,transform.up, Color.green, liftForce/20);
+        /*        wing.AddForce(transform.up * liftForce * Time.deltaTime);
+                wing.AddForce(Vector3.down * gravity * Time.deltaTime);
+                wing.AddForce(transform.right * yawForce * Time.deltaTime);*/
+        //wing.AddRelativeForce(LocalVelocity.normalized * -dragForce * Time.deltaTime);
+
+/*        DrawArrow.ForDebug(transform.position,transform.up, Color.green, liftForce/20);
         DrawArrow.ForDebug(transform.position,-wing.velocity, Color.red, dragForce /20);
         DrawArrow.ForDebug(transform.position,wing.velocity, Color.blue, speed/20);
         DrawArrow.ForDebug(transform.position,transform.forward, Color.magenta, speed / 20);
         DrawArrow.ForDebug(transform.position,Vector3.down, Color.black, gravity/20);
-        DrawArrow.ForDebug(transform.position, transform.right, Color.cyan, yawForce/20);
+        DrawArrow.ForDebug(transform.position, transform.right, Color.cyan, yawForce/20);*/
 
         /*
         DrawArrow.ForDebug(transform.position,transform.up, Color.green, 5f);

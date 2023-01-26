@@ -42,4 +42,9 @@ public class thrustforce : MonoBehaviour
 
         DrawArrow.ForDebug(transform.position, transform.forward, Color.magenta, thrustForce * thrustCoef / 50);
     }
+
+    public void forceWings(Vector3 force,Vector3 position)
+    {
+        propeler.AddForceAtPosition(force, position);
+    }
 }
