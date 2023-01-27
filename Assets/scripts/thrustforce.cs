@@ -47,4 +47,8 @@ public class thrustforce : MonoBehaviour
     {
         propeler.AddForceAtPosition(force, position);
     }
+    public void forceRelativeWings(Vector3 force)
+    {
+        propeler.AddRelativeForce(force);
+    }
 }

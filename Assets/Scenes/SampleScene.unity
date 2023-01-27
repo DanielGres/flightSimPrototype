@@ -487,11 +487,11 @@ MonoBehaviour:
   pitchControl: 0
   pitchControlMax: 0
   trimControl: 0
-  trimControlMax: 10
+  trimControlMax: 0
   controlsup: o
   controlsdown: o
   liftMul: 30
-  dragMul: 10
+  dragMul: 1
   gravity: 30
   liftYaw: 3
   lift:
@@ -1283,7 +1283,7 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 0.754717, g: 0.754717, b: 0.754717, a: 1}
+  m_Color: {r: 0.6226415, g: 0.6226415, b: 0.6226415, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
@@ -4276,7 +4276,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2051935940}
   m_LocalRotation: {x: -0.0746156, y: -0, z: -0, w: 0.9972124}
-  m_LocalPosition: {x: 0, y: 0.89, z: -2.46}
+  m_LocalPosition: {x: 0, y: 0.89, z: 9.54}
   m_LocalScale: {x: 0.3, y: 0.3, z: 4}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4416,11 +4416,11 @@ MonoBehaviour:
   pitchControl: 0
   pitchControlMax: 0
   trimControl: 0
-  trimControlMax: 10
+  trimControlMax: 0
   controlsup: o
   controlsdown: o
   liftMul: 30
-  dragMul: 10
+  dragMul: 1
   gravity: 30
   liftYaw: 3
   lift:

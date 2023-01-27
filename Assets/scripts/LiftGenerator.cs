@@ -47,6 +47,7 @@ public class LiftGenerator : MonoBehaviour
     {
         //wing = GetComponent<Rigidbody>();
         aircraft = fuselage.GetComponent<thrustforce>();
+        previous = transform.position;
     }
 
     // Update is called once per frame
@@ -124,19 +125,19 @@ public class LiftGenerator : MonoBehaviour
         aircraft.forceWings(transform.up * liftForce * Time.deltaTime,transform.position);
         aircraft.forceWings(Vector3.down * gravity * Time.deltaTime, transform.position);
         aircraft.forceWings(transform.right * yawForce * Time.deltaTime, transform.position);
-        aircraft.forceWings(transform.forward * -dragForce * Time.deltaTime, transform.position);
+        aircraft.forceRelativeWings(LocalVelocity.normalized * -dragForce * Time.deltaTime);
 
         /*        wing.AddForce(transform.up * liftForce * Time.deltaTime);
                 wing.AddForce(Vector3.down * gravity * Time.deltaTime);
                 wing.AddForce(transform.right * yawForce * Time.deltaTime);*/
         //wing.AddRelativeForce(LocalVelocity.normalized * -dragForce * Time.deltaTime);
 
-/*        DrawArrow.ForDebug(transform.position,transform.up, Color.green, liftForce/20);
-        DrawArrow.ForDebug(transform.position,-wing.velocity, Color.red, dragForce /20);
-        DrawArrow.ForDebug(transform.position,wing.velocity, Color.blue, speed/20);
-        DrawArrow.ForDebug(transform.position,transform.forward, Color.magenta, speed / 20);
+        DrawArrow.ForDebug(transform.position,transform.up, Color.green, liftForce/20);
+        DrawArrow.ForDebug(transform.position,-Velocity, Color.red, dragForce /20);
+        DrawArrow.ForDebug(transform.position,Velocity, Color.blue, speed/20);
+        DrawArrow.ForDebug(transform.position,transform.forward*speed, Color.magenta, speed / 20);
         DrawArrow.ForDebug(transform.position,Vector3.down, Color.black, gravity/20);
-        DrawArrow.ForDebug(transform.position, transform.right, Color.cyan, yawForce/20);*/
+        DrawArrow.ForDebug(transform.position, transform.right, Color.cyan, yawForce/20);
 
         /*
         DrawArrow.ForDebug(transform.position,transform.up, Color.green, 5f);
