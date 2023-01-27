@@ -412,11 +412,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 144028610}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.6666666, y: -1.2780002, z: 0.16275}
-  m_LocalScale: {x: 0.75, y: 2.25, z: 0.056250017}
+  m_LocalPosition: {x: 0.5, y: -0.38340008, z: 0.651}
+  m_LocalScale: {x: 0.22500001, y: 0.675, z: 0.22500007}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2051935947}
+  m_Father: {fileID: 1947592577}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &144028616
@@ -462,11 +462,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 303115319}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 8, y: 0, z: 0.09399998}
-  m_LocalScale: {x: 15, y: 0.29999998, z: 0.225}
+  m_LocalPosition: {x: 2.4, y: 0, z: 0.37599993}
+  m_LocalScale: {x: 4.5, y: 0.089999996, z: 0.9}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2051935947}
+  m_Father: {fileID: 1947592577}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &303115321
@@ -498,15 +498,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a53362ccfb214284ead8933f9d41d36b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fuselage: {fileID: 2051935940}
+  fuselage: {fileID: 1947592576}
   pitchControl: 0
   pitchControlMax: 0
   trimControl: 0
   trimControlMax: 0
   controlsup: o
   controlsdown: o
-  liftMul: 30
-  dragMul: 3
+  liftMul: 15
+  dragMul: 2
   gravity: 30
   liftYaw: 3
   lift:
@@ -651,6 +651,7 @@ MonoBehaviour:
   heightMeter: {fileID: 1824065230}
   ThrustMeter: {fileID: 1222746942}
   isFlap: 0
+  isYaw: 0
 --- !u!65 &303115326
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -740,11 +741,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 318911722}
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -42, y: 0, z: 0.09399998}
-  m_LocalScale: {x: 0.74999994, y: 1, z: 1}
+  m_LocalPosition: {x: -12.6, y: 0, z: 0.37599993}
+  m_LocalScale: {x: 3, y: 0.3, z: 0.3}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2051935947}
+  m_Father: {fileID: 1947592577}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!81 &318911724
@@ -1511,7 +1512,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a53362ccfb214284ead8933f9d41d36b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fuselage: {fileID: 2051935940}
+  fuselage: {fileID: 1947592576}
   pitchControl: 0
   pitchControlMax: 20
   trimControl: 0
@@ -1664,6 +1665,7 @@ MonoBehaviour:
   heightMeter: {fileID: 1824065230}
   ThrustMeter: {fileID: 1222746942}
   isFlap: 0
+  isYaw: 1
 --- !u!65 &801101797
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1735,11 +1737,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 801101794}
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 1, z: -0.54999995}
-  m_LocalScale: {x: 3, y: 0.16666673, z: 0.1}
+  m_LocalPosition: {x: 0, y: 0.3, z: -2.1999998}
+  m_LocalScale: {x: 0.90000004, y: 0.050000023, z: 0.4}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2051935947}
+  m_Father: {fileID: 1947592577}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!1 &884518283
@@ -2160,11 +2162,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 993641298}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 12.500002, y: 0, z: -0.086000025}
-  m_LocalScale: {x: 5, y: 0.099999994, z: 0.12499996}
+  m_LocalPosition: {x: 3.7500007, y: 0, z: -0.34400034}
+  m_LocalScale: {x: 1.5000002, y: 0.03, z: 0.49999985}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2051935947}
+  m_Father: {fileID: 1947592577}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &993641300
@@ -2179,7 +2181,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a53362ccfb214284ead8933f9d41d36b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fuselage: {fileID: 2051935940}
+  fuselage: {fileID: 1947592576}
   pitchControl: 0
   pitchControlMax: 20
   trimControl: 0
@@ -2332,6 +2334,7 @@ MonoBehaviour:
   heightMeter: {fileID: 1824065230}
   ThrustMeter: {fileID: 1222746942}
   isFlap: 0
+  isYaw: 0
 --- !u!65 &993641302
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2843,14 +2846,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a53362ccfb214284ead8933f9d41d36b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fuselage: {fileID: 2051935940}
+  fuselage: {fileID: 1947592576}
   pitchControl: 0
   pitchControlMax: 10
   trimControl: 0
   trimControlMax: 10
   controlsup: w
   controlsdown: s
-  liftMul: 25
+  liftMul: 13
   dragMul: 0.5
   gravity: 10
   liftYaw: 3
@@ -2996,6 +2999,7 @@ MonoBehaviour:
   heightMeter: {fileID: 1824065230}
   ThrustMeter: {fileID: 1222746942}
   isFlap: 0
+  isYaw: 0
 --- !u!65 &1512781617
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3067,11 +3071,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1512781614}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.5999998, z: -0.4375}
-  m_LocalScale: {x: 10, y: 0.16666667, z: 0.125}
+  m_LocalPosition: {x: 0, y: 0.17999989, z: -1.75}
+  m_LocalScale: {x: 3, y: 0.050000004, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2051935947}
+  m_Father: {fileID: 1947592577}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1601656379
@@ -3102,11 +3106,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1601656379}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -12.500002, y: 0, z: -0.086000025}
-  m_LocalScale: {x: 5, y: 0.099999994, z: 0.12499996}
+  m_LocalPosition: {x: -3.7500007, y: 0, z: -0.34400034}
+  m_LocalScale: {x: 1.5000002, y: 0.03, z: 0.49999985}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2051935947}
+  m_Father: {fileID: 1947592577}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1601656381
@@ -3121,7 +3125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a53362ccfb214284ead8933f9d41d36b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fuselage: {fileID: 2051935940}
+  fuselage: {fileID: 1947592576}
   pitchControl: 0
   pitchControlMax: 20
   trimControl: 0
@@ -3274,6 +3278,7 @@ MonoBehaviour:
   heightMeter: {fileID: 1824065230}
   ThrustMeter: {fileID: 1222746942}
   isFlap: 0
+  isYaw: 0
 --- !u!65 &1601656383
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3644,11 +3649,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1700928682}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 6, z: -1.6250005}
-  m_LocalScale: {x: 3.3333333, y: 3.3333333, z: 0.25}
+  m_LocalPosition: {x: 0, y: 1.8, z: -6.500002}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2051935947}
+  m_Father: {fileID: 1947592577}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1824065228
@@ -3814,11 +3819,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1889409262}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -1, z: -0.45000005}
-  m_LocalScale: {x: 0.75000006, y: 1, z: 0.056250017}
+  m_LocalPosition: {x: 0, y: -0.3, z: -1.8000002}
+  m_LocalScale: {x: 0.22500002, y: 0.3, z: 0.22500007}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2051935947}
+  m_Father: {fileID: 1947592577}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &1889409265
@@ -3943,11 +3948,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1894653849}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.6666666, y: -1.2780002, z: 0.16275}
-  m_LocalScale: {x: 0.75, y: 2.25, z: 0.056250017}
+  m_LocalPosition: {x: -0.5, y: -0.38340008, z: 0.651}
+  m_LocalScale: {x: 0.22500001, y: 0.675, z: 0.22500007}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2051935947}
+  m_Father: {fileID: 1947592577}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &1894653852
@@ -4188,6 +4193,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1947592577}
+  - component: {fileID: 1947592579}
+  - component: {fileID: 1947592578}
   m_Layer: 0
   m_Name: aircraft
   m_TagString: Untagged
@@ -4203,14 +4210,58 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1947592576}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.91, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1700928685}
+  - {fileID: 1894653850}
+  - {fileID: 144028615}
+  - {fileID: 1889409263}
+  - {fileID: 303115320}
+  - {fileID: 993641299}
+  - {fileID: 2090866097}
+  - {fileID: 1601656380}
+  - {fileID: 318911723}
+  - {fileID: 1512781620}
+  - {fileID: 801101800}
   - {fileID: 2051935947}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1947592578
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1947592576}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb4e100f322d8074f868bf0cffbc6be1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gravity: 750
+  thrustForce: 50
+  max_thrust_force: 100
+  thrustCoef: 6
+  ThrustMeter: {fileID: 1222746942}
+--- !u!54 &1947592579
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1947592576}
+  serializedVersion: 2
+  m_Mass: 7
+  m_Drag: 0
+  m_AngularDrag: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &2051935940
 GameObject:
   m_ObjectHideFlags: 0
@@ -4223,8 +4274,6 @@ GameObject:
   - component: {fileID: 2051935946}
   - component: {fileID: 2051935945}
   - component: {fileID: 2051935944}
-  - component: {fileID: 2051935943}
-  - component: {fileID: 2051935950}
   - component: {fileID: 2051935956}
   - component: {fileID: 2051935962}
   m_Layer: 6
@@ -4234,22 +4283,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!54 &2051935943
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2051935940}
-  serializedVersion: 2
-  m_Mass: 7
-  m_Drag: 0
-  m_AngularDrag: 1
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!65 &2051935944
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4320,42 +4353,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2051935940}
-  m_LocalRotation: {x: -0.0746156, y: -0, z: -0, w: 0.9972124}
-  m_LocalPosition: {x: 0, y: 0.89, z: 9.54}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.3, y: 0.3, z: 4}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1700928685}
-  - {fileID: 1894653850}
-  - {fileID: 144028615}
-  - {fileID: 1889409263}
-  - {fileID: 303115320}
-  - {fileID: 993641299}
-  - {fileID: 2090866097}
-  - {fileID: 1601656380}
-  - {fileID: 318911723}
-  - {fileID: 1512781620}
-  - {fileID: 801101800}
+  m_Children: []
   m_Father: {fileID: 1947592577}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -8.558, y: 0, z: 0}
---- !u!114 &2051935950
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2051935940}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cb4e100f322d8074f868bf0cffbc6be1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gravity: 750
-  thrustForce: 0
-  max_thrust_force: 100
-  thrustCoef: 5
-  ThrustMeter: {fileID: 1222746942}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2051935956
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4421,11 +4426,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2090866096}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -8, y: 0, z: 0.09399998}
-  m_LocalScale: {x: 15, y: 0.29999998, z: 0.225}
+  m_LocalPosition: {x: -2.4, y: 0, z: 0.37599993}
+  m_LocalScale: {x: 4.5, y: 0.089999996, z: 0.9}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2051935947}
+  m_Father: {fileID: 1947592577}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2090866098
@@ -4457,15 +4462,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a53362ccfb214284ead8933f9d41d36b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fuselage: {fileID: 2051935940}
+  fuselage: {fileID: 1947592576}
   pitchControl: 0
   pitchControlMax: 0
   trimControl: 0
   trimControlMax: 0
   controlsup: o
   controlsdown: o
-  liftMul: 30
-  dragMul: 3
+  liftMul: 15
+  dragMul: 2
   gravity: 30
   liftYaw: 3
   lift:
@@ -4610,6 +4615,7 @@ MonoBehaviour:
   heightMeter: {fileID: 1824065230}
   ThrustMeter: {fileID: 1222746942}
   isFlap: 0
+  isYaw: 0
 --- !u!65 &2090866103
 BoxCollider:
   m_ObjectHideFlags: 0

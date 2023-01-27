@@ -38,6 +38,7 @@ public class LiftGenerator : MonoBehaviour
     public TextMeshProUGUI ThrustMeter;
 
     public bool isFlap = true;
+    public bool isYaw = false;
 
     Rigidbody wing;
     thrustforce aircraft;
@@ -56,24 +57,29 @@ public class LiftGenerator : MonoBehaviour
         if (Input.GetKey(controlsup)){ 
             if (Input.GetKey("t"))
             {
-                trimControl += 0.05f;
+                trimControl += 0.3f;
             }
             else
             {
-                pitchControl += 1f;
+                pitchControl += 2.5f;
 
             }
         }
         if (Input.GetKey(controlsdown)){ 
             if (Input.GetKey("t"))
             {
-                trimControl -= 0.05f;
+                trimControl -= 0.3f;
             }
             else
             {
-                pitchControl -= 1f;
+                pitchControl -= 2.5f;
 
             }
+        }
+        transform.localRotation = Quaternion.Euler(new Vector3(-pitchControl - trimControl, 0, 0));
+        if (isYaw)
+        {
+            transform.localRotation = Quaternion.Euler(new Vector3(0, -pitchControl - trimControl, 90));
         }
 
         //speed = wing.velocity.magnitude;
@@ -95,8 +101,8 @@ public class LiftGenerator : MonoBehaviour
             pitchControl = Mathf.Clamp(pitchControl, 0, pitchControlMax);
             if (pitchControl >= 1)
             {
-                liftCoefficient = lift.Evaluate(angle + pitchControlMax);
-                dragCoefficient = drag.Evaluate(angle + pitchControlMax);
+                liftCoefficient = lift.Evaluate(angle);
+                dragCoefficient = drag.Evaluate(angle);
             }
             else
             {
@@ -108,9 +114,9 @@ public class LiftGenerator : MonoBehaviour
         {
             pitchControl = Mathf.Clamp(pitchControl, -pitchControlMax / 2, pitchControlMax / 2);
             trimControl = Mathf.Clamp(trimControl, -trimControlMax / 2, trimControlMax / 2);
-            pitchControl = pitchControl * 0.95f;
-            liftCoefficient = lift.Evaluate(angle+pitchControl+trimControl);
-            dragCoefficient = drag.Evaluate(angle+pitchControl);
+            pitchControl = pitchControl * 0.9f;
+            liftCoefficient = lift.Evaluate(angle);
+            dragCoefficient = drag.Evaluate(angle);
         }
         yawCoefficient = yawLift.Evaluate(angleYaw);
 
