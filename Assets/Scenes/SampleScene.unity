@@ -316,6 +316,7 @@ GameObject:
   - component: {fileID: 144028614}
   - component: {fileID: 144028613}
   - component: {fileID: 144028612}
+  - component: {fileID: 144028616}
   m_Layer: 6
   m_Name: rightWheel
   m_TagString: Untagged
@@ -333,13 +334,13 @@ WheelCollider:
   m_Center: {x: 0, y: -0.3, z: 0}
   m_Radius: 0.4
   m_SuspensionSpring:
-    spring: 35000
-    damper: 7000
+    spring: 3500
+    damper: 1000
     targetPosition: 0.5
   m_SuspensionDistance: 0
   m_ForceAppPointDistance: 0
   m_Mass: 1
-  m_WheelDampingRate: 0.25
+  m_WheelDampingRate: 0.4
   m_ForwardFriction:
     m_ExtremumSlip: 2
     m_ExtremumValue: 1
@@ -418,6 +419,20 @@ Transform:
   m_Father: {fileID: 2051935947}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &144028616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 144028610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d71afdb666b284409f2540a206fe36e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myWheel: {fileID: 0}
+  breakForce: 100
 --- !u!1 &303115319
 GameObject:
   m_ObjectHideFlags: 0
@@ -491,7 +506,7 @@ MonoBehaviour:
   controlsup: o
   controlsdown: o
   liftMul: 30
-  dragMul: 1
+  dragMul: 3
   gravity: 30
   liftYaw: 3
   lift:
@@ -3783,6 +3798,7 @@ GameObject:
   - component: {fileID: 1889409266}
   - component: {fileID: 1889409265}
   - component: {fileID: 1889409268}
+  - component: {fileID: 1889409269}
   m_Layer: 6
   m_Name: rearWheel
   m_TagString: Untagged
@@ -3865,13 +3881,13 @@ WheelCollider:
   m_Center: {x: 0, y: -0.3, z: 0}
   m_Radius: 0.4
   m_SuspensionSpring:
-    spring: 35000
-    damper: 7000
+    spring: 3500
+    damper: 1000
     targetPosition: 0.5
   m_SuspensionDistance: 0
   m_ForceAppPointDistance: 0
   m_Mass: 1
-  m_WheelDampingRate: 0.25
+  m_WheelDampingRate: 0.4
   m_ForwardFriction:
     m_ExtremumSlip: 2
     m_ExtremumValue: 1
@@ -3885,6 +3901,20 @@ WheelCollider:
     m_AsymptoteValue: 0.75
     m_Stiffness: 1
   m_Enabled: 1
+--- !u!114 &1889409269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1889409262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d71afdb666b284409f2540a206fe36e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myWheel: {fileID: 0}
+  breakForce: 100
 --- !u!1 &1894653849
 GameObject:
   m_ObjectHideFlags: 0
@@ -3897,6 +3927,7 @@ GameObject:
   - component: {fileID: 1894653853}
   - component: {fileID: 1894653852}
   - component: {fileID: 1894653855}
+  - component: {fileID: 1894653856}
   m_Layer: 6
   m_Name: leftWheel
   m_TagString: Untagged
@@ -3979,13 +4010,13 @@ WheelCollider:
   m_Center: {x: 0, y: -0.3, z: 0}
   m_Radius: 0.4
   m_SuspensionSpring:
-    spring: 35000
-    damper: 7000
+    spring: 3500
+    damper: 1000
     targetPosition: 0.5
   m_SuspensionDistance: 0
   m_ForceAppPointDistance: 0
   m_Mass: 1
-  m_WheelDampingRate: 0.25
+  m_WheelDampingRate: 0.4
   m_ForwardFriction:
     m_ExtremumSlip: 2
     m_ExtremumValue: 1
@@ -3999,6 +4030,20 @@ WheelCollider:
     m_AsymptoteValue: 0.75
     m_Stiffness: 1
   m_Enabled: 1
+--- !u!114 &1894653856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1894653849}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d71afdb666b284409f2540a206fe36e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myWheel: {fileID: 0}
+  breakForce: 100
 --- !u!1 &1931228722
 GameObject:
   m_ObjectHideFlags: 0
@@ -4420,7 +4465,7 @@ MonoBehaviour:
   controlsup: o
   controlsdown: o
   liftMul: 30
-  dragMul: 1
+  dragMul: 3
   gravity: 30
   liftYaw: 3
   lift:

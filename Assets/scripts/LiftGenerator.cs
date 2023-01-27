@@ -77,10 +77,10 @@ public class LiftGenerator : MonoBehaviour
         }
 
         //speed = wing.velocity.magnitude;
-        speed = ((transform.position - previous) / Time.deltaTime).magnitude;
 
         var invRotation = Quaternion.Inverse(transform.rotation);
         Vector3 Velocity = (transform.position - previous) / Time.deltaTime;
+        speed = Velocity.magnitude;
         previous = transform.position;
         //Vector3 Velocity = wing.velocity;
         Vector3 LocalVelocity = invRotation * Velocity;
