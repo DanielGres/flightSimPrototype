@@ -10,13 +10,15 @@ public class pewpew : MonoBehaviour
 
     float nextFire = 0f;
 
+    public float position = 3f;
+
     // Update is called once per frame
     void Update()
     {
         if (Input.GetKey(KeyCode.Space) && Time.time > nextFire)
         {
             nextFire = Time.time + firerate;
-            Instantiate(bullet, transform.position + transform.forward * 2.2f, transform.rotation);
+            Instantiate(bullet, transform.position + transform.forward * position, transform.rotation);
         }
     }
 }

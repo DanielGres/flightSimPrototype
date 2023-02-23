@@ -42,10 +42,11 @@ public class LiftGenerator : MonoBehaviour
 
     Rigidbody wing;
     thrustforce aircraft;
-
     Vector3 previous;
+    Vector3 rotation;
     void Start()
     {
+        rotation = Quaternion.ToEulerAngles(transform.rotation);
         //wing = GetComponent<Rigidbody>();
         aircraft = fuselage.GetComponent<thrustforce>();
         previous = transform.position;
@@ -54,7 +55,7 @@ public class LiftGenerator : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (Input.GetKey(controlsup)){ 
+        if (Input.GetKey(controlsup)) {
             if (Input.GetKey("t"))
             {
                 trimControl += 0.3f;
@@ -65,7 +66,7 @@ public class LiftGenerator : MonoBehaviour
 
             }
         }
-        if (Input.GetKey(controlsdown)){ 
+        if (Input.GetKey(controlsdown)) {
             if (Input.GetKey("t"))
             {
                 trimControl -= 0.3f;
@@ -79,7 +80,7 @@ public class LiftGenerator : MonoBehaviour
         transform.localRotation = Quaternion.Euler(new Vector3(-pitchControl - trimControl, 0, 0));
         if (isYaw)
         {
-            transform.localRotation = Quaternion.Euler(new Vector3(0, -pitchControl - trimControl, 90));
+            transform.localRotation = Quaternion.Euler(new Vector3(0,-pitchControl - trimControl, 0));
         }
 
         //speed = wing.velocity.magnitude;
@@ -95,6 +96,7 @@ public class LiftGenerator : MonoBehaviour
 
         float angle = Mathf.Atan2(-LocalVelocity.y, LocalVelocity.z) * Mathf.Rad2Deg;
         float angleYaw = Mathf.Atan2(-LocalVelocity.x, LocalVelocity.z) * Mathf.Rad2Deg;
+
 
         if (isFlap)
         {
@@ -138,12 +140,12 @@ public class LiftGenerator : MonoBehaviour
                 wing.AddForce(transform.right * yawForce * Time.deltaTime);*/
         //wing.AddRelativeForce(LocalVelocity.normalized * -dragForce * Time.deltaTime);
 
-        DrawArrow.ForDebug(transform.position,transform.up, Color.green, liftForce/20);
-        DrawArrow.ForDebug(transform.position,-Velocity, Color.red, dragForce /20);
-        DrawArrow.ForDebug(transform.position,Velocity, Color.blue, speed/20);
-        DrawArrow.ForDebug(transform.position,transform.forward*speed, Color.magenta, speed / 20);
-        DrawArrow.ForDebug(transform.position,Vector3.down, Color.black, gravity/20);
-        DrawArrow.ForDebug(transform.position, transform.right, Color.cyan, yawForce/20);
+        //DrawArrow.ForDebug(transform.position,transform.up, Color.green, liftForce/20);
+        //DrawArrow.ForDebug(transform.position,-Velocity, Color.red, dragForce /20);
+        //DrawArrow.ForDebug(transform.position,Velocity, Color.blue, speed/20);
+        //DrawArrow.ForDebug(transform.position,transform.forward*speed, Color.magenta, speed / 20);
+        //DrawArrow.ForDebug(transform.position,Vector3.down, Color.black, gravity/20);
+        //DrawArrow.ForDebug(transform.position, transform.right, Color.cyan, yawForce/20);
 
         /*
         DrawArrow.ForDebug(transform.position,transform.up, Color.green, 5f);
