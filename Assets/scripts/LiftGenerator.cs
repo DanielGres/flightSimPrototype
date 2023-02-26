@@ -39,20 +39,18 @@ public class LiftGenerator : MonoBehaviour
 
     public bool isFlap = true;
     public bool isYaw = false;
+    public bool isVisualized = false;
 
     Rigidbody wing;
     thrustforce aircraft;
     Vector3 previous;
-    Vector3 rotation;
+    public float LiftOffSet = 0;
     void Start()
     {
-        rotation = Quaternion.ToEulerAngles(transform.rotation);
-        //wing = GetComponent<Rigidbody>();
         aircraft = fuselage.GetComponent<thrustforce>();
         previous = transform.position;
     }
 
-    // Update is called once per frame
     void FixedUpdate()
     {
         if (Input.GetKey(controlsup)) {
@@ -77,19 +75,12 @@ public class LiftGenerator : MonoBehaviour
 
             }
         }
-        transform.localRotation = Quaternion.Euler(new Vector3(-pitchControl - trimControl, 0, 0));
-        if (isYaw)
-        {
-            transform.localRotation = Quaternion.Euler(new Vector3(0,-pitchControl - trimControl, 0));
-        }
-
-        //speed = wing.velocity.magnitude;
+        Rotate(pitchControl, trimControl);
 
         var invRotation = Quaternion.Inverse(transform.rotation);
         Vector3 Velocity = (transform.position - previous) / Time.deltaTime;
         speed = Velocity.magnitude;
         previous = transform.position;
-        //Vector3 Velocity = wing.velocity;
         Vector3 LocalVelocity = invRotation * Velocity;
 
         float height = transform.position.y;
@@ -97,94 +88,77 @@ public class LiftGenerator : MonoBehaviour
         float angle = Mathf.Atan2(-LocalVelocity.y, LocalVelocity.z) * Mathf.Rad2Deg;
         float angleYaw = Mathf.Atan2(-LocalVelocity.x, LocalVelocity.z) * Mathf.Rad2Deg;
 
+        pitchControl = Mathf.Clamp(pitchControl, -pitchControlMax / 2, pitchControlMax / 2);
+        trimControl = Mathf.Clamp(trimControl, -trimControlMax / 2, trimControlMax / 2);
+        pitchControl = pitchControl * 0.9f;
+        liftCoefficient = lift.Evaluate(angle);
+        dragCoefficient = drag.Evaluate(angle);
 
-        if (isFlap)
-        {
-            pitchControl = Mathf.Clamp(pitchControl, 0, pitchControlMax);
-            if (pitchControl >= 1)
-            {
-                liftCoefficient = lift.Evaluate(angle);
-                dragCoefficient = drag.Evaluate(angle);
-            }
-            else
-            {
-                liftCoefficient = lift.Evaluate(angle);
-                dragCoefficient = drag.Evaluate(angle);
-            }
-        }
-        else
-        {
-            pitchControl = Mathf.Clamp(pitchControl, -pitchControlMax / 2, pitchControlMax / 2);
-            trimControl = Mathf.Clamp(trimControl, -trimControlMax / 2, trimControlMax / 2);
-            pitchControl = pitchControl * 0.9f;
-            liftCoefficient = lift.Evaluate(angle);
-            dragCoefficient = drag.Evaluate(angle);
-        }
         yawCoefficient = yawLift.Evaluate(angleYaw);
 
         float liftForce = 0.5f * speed * speed * liftCoefficient * liftMul;
         float dragForce = 0.5f * speed * speed * dragCoefficient * dragMul;
         float yawForce = 0.5f * speed * speed * yawCoefficient * liftYaw;
 
-        //Debug.Log(" liftCoefficient: " + liftCoefficient + " liftForce: " + liftForce + " dragCoefficient: " + dragCoefficient + " dragForce: " + dragForce);
-        //Debug.Log("x: "+ LocalVelocity.x + " y: "+ LocalVelocity.y + " z: "+ LocalVelocity.z);
-        //Debug.Log(yawForce);
+        aircraft.forceWings(transform.up * liftForce * Time.deltaTime,transform.position + transform.forward * LiftOffSet);
+        aircraft.forceWings(Vector3.down * gravity * Time.deltaTime, transform.position + transform.forward * LiftOffSet);
+        aircraft.forceWings(transform.right * yawForce * Time.deltaTime, transform.position + transform.forward * LiftOffSet);
+        aircraft.forceRelativeWings(LocalVelocity.normalized * -dragForce * Time.deltaTime + transform.forward * LiftOffSet);
 
-        aircraft.forceWings(transform.up * liftForce * Time.deltaTime,transform.position);
-        aircraft.forceWings(Vector3.down * gravity * Time.deltaTime, transform.position);
-        aircraft.forceWings(transform.right * yawForce * Time.deltaTime, transform.position);
-        aircraft.forceRelativeWings(LocalVelocity.normalized * -dragForce * Time.deltaTime);
-
-        /*        wing.AddForce(transform.up * liftForce * Time.deltaTime);
-                wing.AddForce(Vector3.down * gravity * Time.deltaTime);
-                wing.AddForce(transform.right * yawForce * Time.deltaTime);*/
-        //wing.AddRelativeForce(LocalVelocity.normalized * -dragForce * Time.deltaTime);
-
-        //DrawArrow.ForDebug(transform.position,transform.up, Color.green, liftForce/20);
-        //DrawArrow.ForDebug(transform.position,-Velocity, Color.red, dragForce /20);
-        //DrawArrow.ForDebug(transform.position,Velocity, Color.blue, speed/20);
-        //DrawArrow.ForDebug(transform.position,transform.forward*speed, Color.magenta, speed / 20);
-        //DrawArrow.ForDebug(transform.position,Vector3.down, Color.black, gravity/20);
-        //DrawArrow.ForDebug(transform.position, transform.right, Color.cyan, yawForce/20);
-
-        /*
-        DrawArrow.ForDebug(transform.position,transform.up, Color.green, 5f);
-        DrawArrow.ForDebug(transform.position, transform.right, Color.red, 5f);
-        DrawArrow.ForDebug(transform.position, transform.forward, Color.blue, 5f);
-        */
-
-        AOAMeter.SetText("alpha: " + angle.ToString());
-        yawAngleMeter.SetText("Yaw Angle: " + angleYaw.ToString());
-        speedoMeter.SetText("velocity: " + speed.ToString());
-        heightMeter.SetText("height: " + height.ToString());
-
-        Color color;
-
-        if (Mathf.Abs(angle) > 12)
+        if (isVisualized)
         {
-            color = Color.red;
-        }
-        else if (Mathf.Abs(angle) > 5)
-        {
-            color = Color.yellow;
-        }
-        else
-        {
-            color = Color.green;
-        }
+            DrawArrow.ForDebug(transform.position + transform.forward * LiftOffSet, transform.up, Color.green, liftForce / 300);
+            DrawArrow.ForDebug(transform.position + transform.forward * LiftOffSet, -Velocity, Color.red, dragForce / 50);
+            DrawArrow.ForDebug(transform.position + transform.forward * LiftOffSet, Velocity, Color.blue, speed / 50);
+            DrawArrow.ForDebug(transform.position + transform.forward * LiftOffSet, transform.forward * speed, Color.magenta, speed / 400);
+            DrawArrow.ForDebug(transform.position + transform.forward * LiftOffSet, Vector3.down, Color.black, gravity / 300);
+            DrawArrow.ForDebug(transform.position + transform.forward * LiftOffSet, transform.right, Color.cyan, yawForce / 200);
 
-        AOAMeter.color = color;
-        yawAngleMeter.color = color;
-        speedoMeter.color = color;
-        heightMeter.color = color;
+            AOAMeter.SetText("alpha: " + angle.ToString());
+            yawAngleMeter.SetText("Yaw Angle: " + angleYaw.ToString());
+            speedoMeter.SetText("velocity: " + speed.ToString());
+            heightMeter.SetText("height: " + height.ToString());
 
+            Color color;
 
+            if (Mathf.Abs(angle) > 12)
+            {
+                color = Color.red;
+            }
+            else if (Mathf.Abs(angle) > 5)
+            {
+                color = Color.yellow;
+            }
+            else
+            {
+                color = Color.green;
+            }
+
+            AOAMeter.color = color;
+            yawAngleMeter.color = color;
+            speedoMeter.color = color;
+            heightMeter.color = color;
+
+        }
+        
     }
-    public void rotateRigidBodyAroundPointBy(Rigidbody rb, Vector3 origin, Vector3 axis, float angle)
+
+    public void Rotate(float pitchControl, float trimControl)
     {
-        Quaternion q = Quaternion.AngleAxis(angle, axis);
-        rb.MovePosition(q * (rb.transform.position - origin) + origin);
-        rb.MoveRotation(rb.transform.rotation * q);
+        pitchControl = Mathf.Clamp(pitchControl, -pitchControlMax / 2, pitchControlMax / 2);
+        trimControl = Mathf.Clamp(trimControl, -trimControlMax / 2, trimControlMax / 2);
+
+        transform.localRotation = Quaternion.Euler(new Vector3(-pitchControl - trimControl, 0, 0));
+        if (isYaw)
+        {
+            transform.localRotation = Quaternion.Euler(new Vector3(0, -pitchControl - trimControl, 0));
+        }
+    }
+    static void RotateAround(Transform transform, Vector3 pivotPoint, Vector3 axis, float angle)
+    {
+        Quaternion rot = Quaternion.AngleAxis(angle, axis);
+        transform.position = rot * (transform.position - pivotPoint) + pivotPoint;
+        transform.rotation = rot * transform.rotation;
     }
 }
 

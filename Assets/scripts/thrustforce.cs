@@ -9,7 +9,7 @@ public class thrustforce : MonoBehaviour
     Rigidbody propeler;
 
     public float gravity = 50;
-
+    public float headStart = 100f;
     public float thrustForce = 1f;
     public float max_thrust_force = 150;
     public float thrustCoef = 1;
@@ -18,6 +18,7 @@ public class thrustforce : MonoBehaviour
     void Start()
     {
         propeler = GetComponent<Rigidbody>();
+        propeler.AddForce(transform.forward * headStart * 100000 * Time.deltaTime);
     }
 
     // Update is called once per frame
