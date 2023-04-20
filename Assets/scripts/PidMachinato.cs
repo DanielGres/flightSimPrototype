@@ -17,7 +17,10 @@ public class PidMachinato : MonoBehaviour
     float rotationXAxis = 0.0f;
     float velocityX = 0.0f;
     float velocityY = 0.0f;
-    // Use t$$anonymous$$s for initialization
+
+
+    public GameObject nosePoint;
+
     void Start()
     {
         Vector3 angles = transform.eulerAngles;
@@ -44,17 +47,20 @@ public class PidMachinato : MonoBehaviour
             Quaternion toRotation = Quaternion.Euler(rotationXAxis, rotationYAxis, 0);
             Quaternion rotation = toRotation;
 
-            distance = Mathf.Clamp(distance - Input.GetAxis("Mouse ScrollWheel") * 5, distanceMin, distanceMax);
             RaycastHit schwagor;
             if (Physics.Linecast(target.position, transform.position, out schwagor))
             {
                 distance -= schwagor.distance;
             }
+            distance = Mathf.Clamp(distance - Input.GetAxis("Mouse ScrollWheel") * 5, distanceMin, distanceMax);
             Vector3 negDistance = new Vector3(0.0f, 0.0f, -distance);
             Vector3 position = rotation * negDistance + target.position;
 
             transform.rotation = rotation;
             transform.position = position;
+
+            //nosePoint.transform.position = -position;
+            //nosePoint.transform.rotation = rotation;
             velocityX = Mathf.Lerp(velocityX, 0, Time.deltaTime * smoothTime);
             velocityY = Mathf.Lerp(velocityY, 0, Time.deltaTime * smoothTime);
         }
