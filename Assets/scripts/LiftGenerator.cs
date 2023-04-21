@@ -40,6 +40,7 @@ public class LiftGenerator : MonoBehaviour
     public bool isFlap = true;
     public bool isYaw = false;
     public bool isVisualized = false;
+    public bool isRight = false;
 
     Rigidbody wing;
     thrustforce aircraft;
@@ -138,7 +139,8 @@ public class LiftGenerator : MonoBehaviour
             yawAngleMeter.color = color;
             speedoMeter.color = color;
             heightMeter.color = color;
-
+            
+           
         }
         
     }
