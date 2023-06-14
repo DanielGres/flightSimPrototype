@@ -10,8 +10,6 @@ public class pewpew : MonoBehaviour
 
     float nextFire = 0f;
 
-    public AudioSource audioData;
-
     public float position = 3f;
 
     // Update is called once per frame
@@ -21,6 +19,7 @@ public class pewpew : MonoBehaviour
         {
             nextFire = Time.time + firerate;
             Instantiate(bullet, transform.position + transform.forward * position, transform.rotation);
+            
         }
     }
 }

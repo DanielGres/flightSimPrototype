@@ -82,7 +82,7 @@ public class LiftGenerator : MonoBehaviour
         speed = Velocity.magnitude;
         previous = transform.position;
         Vector3 LocalVelocity = invRotation * Velocity;
-
+        
         float height = transform.position.y;
 
         float angle = Mathf.Atan2(-LocalVelocity.y, LocalVelocity.z) * Mathf.Rad2Deg;

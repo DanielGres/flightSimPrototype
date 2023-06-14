@@ -8,9 +8,8 @@ public class thrustforce : MonoBehaviour
 {
     Rigidbody propeler;
 
-    public float gravity = 50;
     public float headStart = 100f;
-    public float thrustForce = 1f;
+    public static float thrustForce = 1f;
     public float max_thrust_force = 150;
     public float thrustCoef = 1;
 
@@ -39,7 +38,6 @@ public class thrustforce : MonoBehaviour
         thrustForce = Mathf.Clamp(thrustForce, 0, max_thrust_force);
         propeler.AddForce(transform.forward * thrustForce * thrustCoef * Time.deltaTime);
         ThrustMeter.SetText("thrust: " + thrustForce.ToString());
-        propeler.AddForce(Vector3.down * gravity * Time.deltaTime);
 
         DrawArrow.ForDebug(transform.position, transform.forward, Color.magenta, thrustForce * thrustCoef / 50);
     }

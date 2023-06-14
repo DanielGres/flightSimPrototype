@@ -400,7 +400,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 365690575}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1, y: -0.59, z: -2.6490002}
+  m_LocalPosition: {x: -1, y: -0.58, z: -2.6490002}
   m_LocalScale: {x: 0.225, y: 0.675, z: 0.225}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -428,7 +428,7 @@ WheelCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 365690575}
-  m_Center: {x: 0, y: -0.3, z: 0}
+  m_Center: {x: 0, y: -0.15, z: 0}
   m_Radius: 0.4
   m_SuspensionSpring:
     spring: 3500
@@ -1564,7 +1564,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1206095864}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1, y: -0.59, z: -2.6490002}
+  m_LocalPosition: {x: 1, y: -0.58, z: -2.6490002}
   m_LocalScale: {x: 0.225, y: 0.675, z: 0.225}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1592,7 +1592,7 @@ WheelCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1206095864}
-  m_Center: {x: 0, y: -0.3, z: 0}
+  m_Center: {x: 0, y: -0.15, z: 0}
   m_Radius: 0.4
   m_SuspensionSpring:
     spring: 3500
@@ -1690,7 +1690,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1217702961}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 2.75}
+  m_LocalPosition: {x: 0, y: 0, z: -2.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1710,7 +1710,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fuselage: {fileID: 6367260448213869982}
-  gravity: 300
+  gravity: 2400
 --- !u!1 &1222746941
 GameObject:
   m_ObjectHideFlags: 0
@@ -1874,7 +1874,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1336595509}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.09, z: 2.1499996}
+  m_LocalPosition: {x: 0, y: -1, z: 2.1499996}
   m_LocalScale: {x: 0.225, y: 0.29999998, z: 0.225}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3002,7 +3002,7 @@ MonoBehaviour:
   trimControlMax: 0
   controlsup: o
   controlsdown: o
-  liftMul: 10
+  liftMul: 40
   dragMul: 0.07
   gravity: 300
   liftYaw: 3
@@ -3037,7 +3037,7 @@ MonoBehaviour:
       inWeight: 0.56700844
       outWeight: 0.6676337
     - serializedVersion: 3
-      time: -4
+      time: -2
       value: 0
       inSlope: 0.0399852
       outSlope: 0.0399852
@@ -3426,9 +3426,9 @@ MonoBehaviour:
   controlsup: w
   controlsdown: s
   liftMul: 10
-  dragMul: 0.02
+  dragMul: 0.01
   gravity: 10
-  liftYaw: 1.5
+  liftYaw: 3
   lift:
     serializedVersion: 2
     m_Curve:
@@ -3460,7 +3460,7 @@ MonoBehaviour:
       inWeight: 0.56700844
       outWeight: 0.6676337
     - serializedVersion: 3
-      time: -4
+      time: 0
       value: 0
       inSlope: 0.0399852
       outSlope: 0.0399852
@@ -3636,7 +3636,7 @@ MonoBehaviour:
   isFlap: 0
   isYaw: 0
   isVisualized: 1
-  LiftOffSet: -0.5
+  LiftOffSet: 0
 --- !u!1 &3138272786530737402
 GameObject:
   m_ObjectHideFlags: 0
@@ -3894,9 +3894,9 @@ MonoBehaviour:
   controlsup: w
   controlsdown: s
   liftMul: 10
-  dragMul: 0.02
+  dragMul: 0.01
   gravity: 10
-  liftYaw: 1.5
+  liftYaw: 3
   lift:
     serializedVersion: 2
     m_Curve:
@@ -3928,7 +3928,7 @@ MonoBehaviour:
       inWeight: 0.56700844
       outWeight: 0.6676337
     - serializedVersion: 3
-      time: -4
+      time: 0
       value: 0
       inSlope: 0.0399852
       outSlope: 0.0399852
@@ -4104,7 +4104,7 @@ MonoBehaviour:
   isFlap: 0
   isYaw: 0
   isVisualized: 1
-  LiftOffSet: -0.5
+  LiftOffSet: 0
 --- !u!4 &4750355122960873063
 Transform:
   m_ObjectHideFlags: 0
@@ -5323,7 +5323,7 @@ MonoBehaviour:
   trimControlMax: 0
   controlsup: o
   controlsdown: o
-  liftMul: 10
+  liftMul: 40
   dragMul: 0.07
   gravity: 300
   liftYaw: 3
@@ -5358,7 +5358,7 @@ MonoBehaviour:
       inWeight: 0.56700844
       outWeight: 0.6676337
     - serializedVersion: 3
-      time: -4
+      time: -2
       value: 0
       inSlope: 0.0399852
       outSlope: 0.0399852
@@ -5584,7 +5584,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb4e100f322d8074f868bf0cffbc6be1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gravity: 600
   headStart: 0
   thrustForce: 0
   max_thrust_force: 100
@@ -5598,7 +5597,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6367260448213869982}
   serializedVersion: 2
-  m_Mass: 20
+  m_Mass: 30
   m_Drag: 0
   m_AngularDrag: 0.5
   m_UseGravity: 0
