@@ -107,12 +107,15 @@ public class LiftGenerator : MonoBehaviour
 
         if (isVisualized)
         {
+
             DrawArrow.ForDebug(transform.position + transform.forward * LiftOffSet, transform.up, Color.green, liftForce / 300);
             DrawArrow.ForDebug(transform.position + transform.forward * LiftOffSet, -Velocity, Color.red, dragForce / 50);
             DrawArrow.ForDebug(transform.position + transform.forward * LiftOffSet, Velocity, Color.blue, speed / 50);
             DrawArrow.ForDebug(transform.position + transform.forward * LiftOffSet, transform.forward * speed, Color.magenta, speed / 400);
             DrawArrow.ForDebug(transform.position + transform.forward * LiftOffSet, Vector3.down, Color.black, gravity / 300);
             DrawArrow.ForDebug(transform.position + transform.forward * LiftOffSet, transform.right, Color.cyan, yawForce / 200);
+
+            DrawArrow.DrawSphere(transform.position + transform.forward * LiftOffSet,0.25f,Color.yellow);
 
             AOAMeter.SetText("alpha: " + angle.ToString());
             yawAngleMeter.SetText("Yaw Angle: " + angleYaw.ToString());
@@ -160,6 +163,13 @@ public class LiftGenerator : MonoBehaviour
         Quaternion rot = Quaternion.AngleAxis(angle, axis);
         transform.position = rot * (transform.position - pivotPoint) + pivotPoint;
         transform.rotation = rot * transform.rotation;
+    }
+
+    void OnDrawGizmosSelected()
+    {
+        // Draw a yellow sphere at the transform's position
+        Gizmos.color = Color.green;
+        Gizmos.DrawSphere(transform.position + transform.forward * LiftOffSet, 0.25f);
     }
 }
 

@@ -15,6 +15,12 @@ public class CentGrav : MonoBehaviour
 
     void Update()
     {
-        aircraft.forceWings(Vector3.down * gravity * Time.deltaTime, transform.position);
+        aircraft.forceWings(Vector3.down * 10 * gravity * Time.deltaTime, transform.position);
+    }
+
+    void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawSphere(transform.position, 0.25f);
     }
 }

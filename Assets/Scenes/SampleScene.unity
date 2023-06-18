@@ -655,8 +655,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 2, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 666970473}
+  m_Children: []
   m_Father: {fileID: 9112070112363865546}
   m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -732,52 +731,7 @@ MonoBehaviour:
   distanceMin: 10
   distanceMax: 25
   smoothTime: 5
-  nosePoint: {fileID: 666970472}
---- !u!1 &666970472
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 666970473}
-  - component: {fileID: 666970474}
-  m_Layer: 0
-  m_Name: nosePoint
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &666970473
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 666970472}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 20}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 655593340}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &666970474
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 666970472}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59ac15d5745dca54fb327c545216bdf6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AircraftPoint: {fileID: 6367260448213869982}
+  nosePoint: {fileID: 0}
 --- !u!1 &687197530
 GameObject:
   m_ObjectHideFlags: 0
@@ -1858,7 +1812,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1217702961}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -2.5}
+  m_LocalPosition: {x: 0, y: 0, z: -1.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1878,7 +1832,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fuselage: {fileID: 6367260448213869982}
-  gravity: 4000
+  gravity: 1000
 --- !u!1 &1222746941
 GameObject:
   m_ObjectHideFlags: 0
@@ -3254,7 +3208,7 @@ MonoBehaviour:
   trimControlMax: 0
   controlsup: o
   controlsdown: o
-  liftMul: 15
+  liftMul: 30
   dragMul: 0.07
   gravity: 0
   liftYaw: 3
@@ -3358,8 +3312,8 @@ MonoBehaviour:
       inWeight: 0.913128
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: -58.275948
-      value: 2.2080784
+      time: -57.86561
+      value: 1.2052708
       inSlope: -0.046791855
       outSlope: -0.046791855
       tangentMode: 0
@@ -3376,8 +3330,8 @@ MonoBehaviour:
       inWeight: 0.33333334
       outWeight: 0.4094678
     - serializedVersion: 3
-      time: 63.632866
-      value: 2.655741
+      time: 57.06718
+      value: 1.2472903
       inSlope: 0.057417147
       outSlope: 0.055152606
       tangentMode: 1
@@ -3501,10 +3455,10 @@ MonoBehaviour:
   trimControlMax: 10
   controlsup: e
   controlsdown: q
-  liftMul: 20
+  liftMul: 10
   dragMul: 0.1
   gravity: 0
-  liftYaw: 3
+  liftYaw: 5
   lift:
     serializedVersion: 2
     m_Curve:
@@ -3861,7 +3815,7 @@ MonoBehaviour:
   isFlap: 0
   isYaw: 0
   isVisualized: 1
-  LiftOffSet: -2
+  LiftOffSet: 0
 --- !u!1 &3138272786530737402
 GameObject:
   m_ObjectHideFlags: 0
@@ -3942,10 +3896,10 @@ MonoBehaviour:
   trimControlMax: 10
   controlsup: e
   controlsdown: q
-  liftMul: 20
+  liftMul: 10
   dragMul: 0.1
   gravity: 0
-  liftYaw: 3
+  liftYaw: 5
   lift:
     serializedVersion: 2
     m_Curve:
@@ -4302,7 +4256,7 @@ MonoBehaviour:
   isFlap: 0
   isYaw: 0
   isVisualized: 1
-  LiftOffSet: -2
+  LiftOffSet: 0
 --- !u!4 &4750355122960873063
 Transform:
   m_ObjectHideFlags: 0
@@ -5631,7 +5585,7 @@ MonoBehaviour:
   trimControlMax: 0
   controlsup: o
   controlsdown: o
-  liftMul: 15
+  liftMul: 30
   dragMul: 0.07
   gravity: 0
   liftYaw: 3
@@ -5735,8 +5689,8 @@ MonoBehaviour:
       inWeight: 0.913128
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: -58.275948
-      value: 2.2080784
+      time: -57.86561
+      value: 1.2052708
       inSlope: -0.046791855
       outSlope: -0.046791855
       tangentMode: 0
@@ -5753,8 +5707,8 @@ MonoBehaviour:
       inWeight: 0.33333334
       outWeight: 0.4094678
     - serializedVersion: 3
-      time: 63.632866
-      value: 2.655741
+      time: 57.06718
+      value: 1.2472903
       inSlope: 0.057417147
       outSlope: 0.055152606
       tangentMode: 1
@@ -5894,7 +5848,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   headStart: 0
   max_thrust_force: 100
-  thrustCoef: 30
+  thrustCoef: 60
   ThrustMeter: {fileID: 1222746942}
 --- !u!54 &9112070112363865548
 Rigidbody:
@@ -5904,9 +5858,9 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6367260448213869982}
   serializedVersion: 2
-  m_Mass: 40
+  m_Mass: 50
   m_Drag: 0
-  m_AngularDrag: 0.3
+  m_AngularDrag: 0.05
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
